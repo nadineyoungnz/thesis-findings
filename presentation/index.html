@@ -6,9 +6,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:    #efe6da; --bg2: #e6dac8; --ink: #044e52; --ink2: #2a5f62;
-    --muted: #6a8080; --hair: #c8b99a; --accent: #B8922A;
-    --teal:  #044e52; --rust: #b84a2b;
+    --bg:#efe6da;--bg2:#e6dac8;--ink:#044e52;--ink2:#2a5f62;
+    --muted:#6a8080;--hair:#c8b99a;--accent:#B8922A;--rust:#b84a2b;
     --f-disp:"Instrument Serif","Cormorant Garamond",Georgia,serif;
     --f-body:"Geist",ui-sans-serif,system-ui,sans-serif;
     --f-mono:"JetBrains Mono",ui-monospace,monospace;
@@ -37,266 +36,234 @@
   .section-dot:hover{background:var(--ink2)}
 
   .c{max-width:1440px;margin:0 auto;padding:0 40px}
-  .c-narrow{max-width:1440px;margin:0 auto;padding:0 clamp(40px,12vw,220px)}
   .hair-line{height:1px;background:var(--hair)}
-
   .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;margin-bottom:20px}
   .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--hair)}
+  .section-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;line-height:1}
+  .section-intro{font-size:1rem;color:var(--ink2);line-height:1.8;max-width:58ch;margin-top:1rem}
 
   /* HERO */
   .hero{min-height:100vh;background:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7rem 40px 5rem;position:relative;overflow:hidden}
   .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(239,230,218,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(239,230,218,.03) 1px,transparent 1px);background-size:80px 80px}
   .hero-wm{position:absolute;bottom:-4%;right:-4%;width:42%;opacity:.04;filter:brightness(0) invert(1);pointer-events:none}
   .hero-inner{position:relative;z-index:2;max-width:900px}
+  .hero-portrait{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(184,146,42,.5);margin:0 auto 2.5rem;display:block;box-shadow:0 0 0 8px rgba(239,230,218,.04)}
   .hero-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.4);margin-bottom:2.5rem}
   .hero h1{font-family:var(--f-disp);font-size:clamp(3.2rem,7vw,7rem);font-weight:400;color:var(--bg);line-height:.95;letter-spacing:-.02em;margin-bottom:2rem}
   .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero-desc{font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(239,230,218,.6);line-height:1.8;max-width:560px;margin:0 auto 4rem}
-  .hero-stats{display:flex;gap:0;justify-content:center;border-top:1px solid rgba(239,230,218,.1);padding-top:2.5rem}
-  .hero-stat{padding:0 3rem;border-right:1px solid rgba(239,230,218,.1);text-align:center}
-  .hero-stat:last-child{border-right:none}
-  .hero-stat .n{font-family:var(--f-disp);font-size:3rem;color:rgba(239,230,218,.9);line-height:1;display:block;font-style:italic}
-  .hero-stat p{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.35);margin-top:6px}
+  .hero-desc{font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(239,230,218,.6);line-height:1.8;max-width:560px;margin:0 auto}
   .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(239,230,218,.3);display:flex;flex-direction:column;align-items:center;gap:8px}
   .hero-scroll::after{content:'';display:block;width:1px;height:40px;background:rgba(239,230,218,.2)}
 
-  /* OPENING QUOTE */
-  .opening-quote{padding:7rem 0;text-align:center;background:var(--bg)}
-  .opening-quote blockquote{font-family:var(--f-disp);font-size:clamp(1.6rem,3vw,2.6rem);font-style:italic;color:var(--ink);line-height:1.3;max-width:800px;margin:0 auto;padding:0 40px}
-  .opening-quote cite{display:block;margin-top:1.5rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
   /* PULL QUOTE */
-  .pull{background:var(--ink);padding:6rem 0;text-align:center}
-  .pull blockquote{font-family:var(--f-disp);font-size:clamp(1.2rem,2.2vw,2rem);font-style:italic;color:var(--bg);line-height:1.35;max-width:820px;margin:0 auto;padding:0 40px}
-  .pull cite{display:block;margin-top:1.5rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.35)}
+  .pull{background:var(--ink);padding:5rem 0;text-align:center}
+  .pull blockquote{font-family:var(--f-disp);font-size:clamp(1.3rem,2.5vw,2.2rem);font-style:italic;color:var(--bg);line-height:1.35;max-width:820px;margin:0 auto;padding:0 40px}
+  .pull cite{display:block;margin-top:1.2rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.35)}
 
-  /* MY STORY / INTRO */
+  /* OPENING QUOTE */
+  .opening-quote{padding:6rem 0;text-align:center;background:var(--bg)}
+  .opening-quote blockquote{font-family:var(--f-disp);font-size:clamp(1.5rem,2.8vw,2.4rem);font-style:italic;color:var(--ink);line-height:1.3;max-width:800px;margin:0 auto;padding:0 40px}
+  .opening-quote cite{display:block;margin-top:1.2rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  /* INTRO */
   .intro-section{background:var(--ink);padding:7rem 0}
   .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-  .intro-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:1.5rem;line-height:1}
   .intro-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(239,230,218,.3);display:flex;align-items:center;gap:10px;margin-bottom:20px}
   .intro-eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(239,230,218,.2)}
-  .intro-body p{font-size:.95rem;color:rgba(239,230,218,.65);line-height:1.9;margin-bottom:1.3rem}
-  .intro-body p:last-child{margin-bottom:0}
-  .intro-body strong{color:rgba(239,230,218,.9)}
+  .intro-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:1.5rem;line-height:1}
+  .intro-body p{font-size:.95rem;color:rgba(239,230,218,.65);line-height:1.85;margin-bottom:1.2rem}
   .gap-cards{display:flex;flex-direction:column;gap:1rem}
-  .gap-card{background:rgba(239,230,218,.05);border:1px solid rgba(239,230,218,.1);padding:1.5rem 1.8rem}
-  .gap-card-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block}
-  .gap-card p{font-size:.88rem;color:rgba(239,230,218,.6);line-height:1.75;margin:0}
+  .gap-card{background:rgba(239,230,218,.05);border:1px solid rgba(239,230,218,.1);padding:1.4rem 1.8rem}
+  .gap-card-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;display:block}
+  .gap-card p{font-size:.88rem;color:rgba(239,230,218,.6);line-height:1.7;margin:0}
   .gap-card strong{color:rgba(239,230,218,.88)}
 
-  /* LITERATURE REVIEW: HISTORY */
+  /* HISTORY */
   .history-section{background:var(--bg2);padding:7rem 0}
   .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:4rem;border-top:2px solid var(--hair)}
-  .tl-item{padding:2rem 1.5rem 2rem 0;position:relative}
+  .tl-item{padding:1.8rem 1.5rem 1.8rem 0;position:relative}
   .tl-item::before{content:'';position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--hair)}
   .tl-item.now::before{background:var(--ink)}
-  .tl-year{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
-  .tl-label{font-family:var(--f-disp);font-size:1.05rem;color:var(--ink);margin-bottom:8px;line-height:1.2}
-  .tl-desc{font-size:.83rem;color:var(--ink2);line-height:1.75}
-  .history-callouts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
-  .history-callout{background:var(--bg);border:1px solid var(--hair);border-top:3px solid var(--ink);padding:2rem}
-  .history-callout h4{font-family:var(--f-disp);font-size:1.1rem;color:var(--ink);margin-bottom:.8rem}
-  .history-callout p{font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%}
+  .tl-year{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;display:block}
+  .tl-label{font-family:var(--f-disp);font-size:1rem;color:var(--ink);margin-bottom:6px;line-height:1.2}
+  .tl-desc{font-size:.82rem;color:var(--ink2);line-height:1.7}
+  .history-callouts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+  .history-callout{background:var(--bg);border:1px solid var(--hair);border-top:3px solid var(--ink);padding:1.8rem}
+  .history-callout h4{font-family:var(--f-disp);font-size:1.05rem;color:var(--ink);margin-bottom:.6rem}
+  .history-callout p{font-size:.85rem;color:var(--ink2);line-height:1.75;max-width:100%}
 
-  /* LITERATURE REVIEW: AI RISK */
+  /* AI RISK */
   .airisk-section{background:var(--bg);padding:7rem 0}
   .airisk-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:4rem;align-items:start}
-  .airisk-block h3{font-family:var(--f-disp);font-size:1.6rem;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em}
-  .framework-item{padding:1.2rem 0;border-bottom:1px solid var(--hair)}
+  .airisk-block h3{font-family:var(--f-disp);font-size:1.4rem;color:var(--ink);margin-bottom:1.2rem}
+  .framework-item{padding:1rem 0;border-bottom:1px solid var(--hair)}
   .framework-item:first-of-type{border-top:1px solid var(--hair)}
-  .fw-name{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
-  .fw-desc{font-size:.9rem;color:var(--ink2);line-height:1.75}
+  .fw-name{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:3px}
+  .fw-desc{font-size:.88rem;color:var(--ink2);line-height:1.7}
   .country-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .country-item{background:var(--bg2);border:1px solid var(--hair);padding:1.2rem 1.4rem}
-  .country-flag{font-size:1.1rem;margin-bottom:4px;display:block}
-  .country-name-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
-  .country-desc{font-size:.83rem;color:var(--ink2);line-height:1.7}
+  .country-item{background:var(--bg2);border:1px solid var(--hair);padding:1.1rem 1.3rem}
+  .country-flag{font-size:1rem;margin-bottom:3px;display:block}
+  .country-name-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
+  .country-desc{font-size:.82rem;color:var(--ink2);line-height:1.65}
 
   /* METHODOLOGY */
   .method-section{background:var(--bg2);padding:7rem 0}
   .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:4rem;align-items:start}
   .method-frameworks{display:flex;flex-direction:column;gap:1px;background:var(--hair)}
-  .method-fw{background:var(--bg2);padding:1.4rem 2rem}
-  .method-fw-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;display:block}
-  .method-fw h4{font-family:var(--f-disp);font-size:1.1rem;color:var(--ink)}
-  .method-quote{background:var(--ink);padding:2rem 2.5rem;margin-top:2rem}
-  .method-quote p{font-family:var(--f-disp);font-style:italic;font-size:1.05rem;color:rgba(239,230,218,.88);line-height:1.65}
-  .method-quote cite{display:block;margin-top:.75rem;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.35)}
-  .participants-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
-  .participant-stat{background:var(--ink);padding:1.8rem;text-align:center}
+  .method-fw{background:var(--bg2);padding:1.3rem 2rem}
+  .method-fw-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
+  .method-fw h4{font-family:var(--f-disp);font-size:1.05rem;color:var(--ink)}
+  .method-quote{background:var(--ink);padding:1.8rem 2.2rem;margin-top:1.5rem}
+  .method-quote p{font-family:var(--f-disp);font-style:italic;font-size:1rem;color:rgba(239,230,218,.85);line-height:1.6}
+  .method-quote cite{display:block;margin-top:.6rem;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.3)}
+  .participants-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+  .participant-stat{background:var(--ink);padding:1.6rem;text-align:center}
   .participant-n{font-family:var(--f-disp);font-size:3rem;font-style:italic;color:var(--bg);display:block;line-height:1}
-  .participant-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,230,218,.35);margin-top:6px;display:block}
-  .participant-desc{font-size:.82rem;color:rgba(239,230,218,.55);line-height:1.6;margin-top:6px}
-  .participant-types{display:flex;flex-direction:column;gap:.75rem}
-  .participant-type{background:var(--bg);border:1px solid var(--hair);padding:1rem 1.4rem}
-  .pt-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
-  .participant-type p{font-size:.87rem;color:var(--ink2);line-height:1.65;margin:0}
-
-  /* RESEARCH QUESTION */
-  .rq-section{background:var(--bg);padding:7rem 0}
-  .rq-grid{display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
-  .rq-left .eyebrow{margin-bottom:1.5rem}
-  .rq-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);line-height:1;letter-spacing:-.02em;margin-bottom:2rem}
-  .rq-card{background:var(--ink);padding:3rem;position:relative}
-  .rq-card::before{content:'\201C';font-family:var(--f-disp);font-size:10rem;color:rgba(255,255,255,.04);position:absolute;top:-1rem;left:2rem;line-height:1;pointer-events:none}
-  .rq-card p{font-family:var(--f-disp);font-size:1.25rem;font-style:italic;color:rgba(239,230,218,.9);line-height:1.7;position:relative;z-index:1;margin:0;max-width:100%}
-  .sub-qs{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--hair)}
-  .sub-q{background:var(--bg);padding:1.5rem 2rem}
-  .sub-q .sq-n{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .sub-q p{font-size:.9rem;color:var(--ink2);line-height:1.75;max-width:100%}
+  .participant-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,230,218,.35);margin-top:5px;display:block}
+  .participant-desc{font-size:.8rem;color:rgba(239,230,218,.5);line-height:1.55;margin-top:5px}
+  .participant-types{display:flex;flex-direction:column;gap:.6rem}
+  .participant-type{background:var(--bg);border:1px solid var(--hair);padding:.9rem 1.3rem}
+  .pt-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;display:block}
+  .participant-type p{font-size:.85rem;color:var(--ink2);line-height:1.6;margin:0}
 
   /* FRAMEWORKS */
-  .frameworks-section{background:var(--bg2);padding:7rem 0}
-  .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:4rem}
-  .fw-card{background:var(--bg);display:flex;flex-direction:column}
-  .fw-head{background:var(--ink);padding:1.8rem 2.5rem}
-  .fw-head h3{font-family:var(--f-disp);font-size:2rem;color:var(--bg);margin-bottom:6px}
+  .frameworks-section{background:var(--bg);padding:7rem 0}
+  .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3.5rem}
+  .fw-card{background:var(--bg2);display:flex;flex-direction:column}
+  .fw-head{background:var(--ink);padding:1.6rem 2.2rem}
+  .fw-head h3{font-family:var(--f-disp);font-size:1.8rem;color:var(--bg);margin-bottom:4px}
   .fw-head .fw-sub{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.4)}
-  .fw-body{padding:2rem 2.2rem}
-  .fw-body p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin-bottom:1rem;max-width:100%}
-  .fw-list{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-  .fw-list li{display:flex;gap:12px;font-size:.88rem;color:var(--ink);line-height:1.65}
+  .fw-body{padding:1.8rem 2rem}
+  .fw-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+  .fw-list li{display:flex;gap:12px;font-size:.87rem;color:var(--ink);line-height:1.6}
   .fw-list li::before{content:'—';color:var(--hair);flex-shrink:0}
 
-  /* FIVE THEMES */
+  /* RESEARCH QUESTION */
+  .rq-section{background:var(--bg2);padding:7rem 0}
+  .rq-grid{display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
+  .rq-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);line-height:1;letter-spacing:-.02em;margin-bottom:2rem}
+  .rq-card{background:var(--ink);padding:2.5rem;position:relative}
+  .rq-card::before{content:'\201C';font-family:var(--f-disp);font-size:8rem;color:rgba(255,255,255,.04);position:absolute;top:-.5rem;left:1.5rem;line-height:1;pointer-events:none}
+  .rq-card p{font-family:var(--f-disp);font-size:1.15rem;font-style:italic;color:rgba(239,230,218,.9);line-height:1.7;position:relative;z-index:1;margin:0}
+  .sub-qs{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--hair)}
+  .sub-q{background:var(--bg2);padding:1.3rem 1.8rem}
+  .sub-q .sq-n{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .sub-q p{font-size:.88rem;color:var(--ink2);line-height:1.7}
+
+  /* THEMES */
   .themes-section{background:var(--bg);padding:7rem 0}
-  .themes-header{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;margin-bottom:5rem}
-  .themes-header .s-intro{font-size:1rem;color:var(--ink2);line-height:1.85;margin:0}
-  .theme-item{display:grid;grid-template-columns:120px 1fr;gap:3rem;align-items:start;padding:3.5rem 0;border-top:1px solid var(--hair)}
+  .themes-header{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;margin-bottom:4rem}
+  .s-intro{font-size:.95rem;color:var(--ink2);line-height:1.8;margin:0}
+  .theme-item{display:grid;grid-template-columns:100px 1fr;gap:3rem;align-items:start;padding:3rem 0;border-top:1px solid var(--hair)}
   .theme-item:last-child{border-bottom:1px solid var(--hair)}
-  .theme-n{font-family:var(--f-disp);font-size:4rem;color:var(--hair);line-height:1;font-style:italic}
-  .theme-content h3{font-family:var(--f-disp);font-size:clamp(1.4rem,2.5vw,2rem);color:var(--ink);margin-bottom:1rem;line-height:1.1;letter-spacing:-.01em}
-  .theme-content p{font-size:.93rem;color:var(--ink2);line-height:1.88;margin-bottom:1.2rem;max-width:72ch}
-  .theme-quote-block{border-left:2px solid var(--hair);padding-left:1.4rem;margin-top:1.5rem}
-  .theme-quote-block p{font-family:var(--f-disp);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.7;margin-bottom:.5rem}
+  .theme-n{font-family:var(--f-disp);font-size:3.5rem;color:var(--hair);line-height:1;font-style:italic}
+  .theme-content h3{font-family:var(--f-disp);font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink);margin-bottom:.8rem;line-height:1.1;letter-spacing:-.01em}
+  .theme-content p{font-size:.92rem;color:var(--ink2);line-height:1.82;margin-bottom:1rem;max-width:70ch}
+  .theme-quote-block{border-left:2px solid var(--hair);padding-left:1.3rem;margin-top:1.2rem}
+  .theme-quote-block p{font-family:var(--f-disp);font-style:italic;font-size:.98rem;color:var(--ink);line-height:1.65;margin-bottom:.4rem}
   .theme-quote-block cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   /* DATA SOVEREIGNTY */
   .sovereignty-section{background:var(--bg2);padding:7rem 0}
   .triptych{display:grid;grid-template-columns:repeat(3,1fr);margin-top:4rem}
-  .tc{padding:4rem 3.5rem 4rem;min-height:480px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .tc{padding:3.5rem 3rem;min-height:420px;display:flex;flex-direction:column;position:relative;overflow:hidden}
   .tc.noa{background:var(--ink)}
   .tc.tapu{background:#022e30}
   .tc.rahui{background:var(--rust)}
-  .tc-word{font-family:var(--f-disp);font-size:4.5rem;font-style:italic;color:rgba(239,230,218,.9);line-height:1;display:block;margin-bottom:4px}
-  .tc-translation{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.4);display:block;margin-bottom:2.5rem}
-  .tc p{font-size:.92rem;color:rgba(239,230,218,.72);line-height:1.85;flex:1;max-width:100%}
-  .tc-bg{position:absolute;right:-1.5rem;bottom:-3rem;font-family:var(--f-disp);font-size:13rem;font-style:italic;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
-  .sovereignty-quote{max-width:780px;margin:4rem auto 0;text-align:center}
-  .sovereignty-quote p{font-family:var(--f-disp);font-size:clamp(1.2rem,2vw,1.6rem);font-style:italic;color:var(--ink);line-height:1.55}
-  .sovereignty-quote cite{display:block;margin-top:1rem;font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tc-word{font-family:var(--f-disp);font-size:4rem;font-style:italic;color:rgba(239,230,218,.9);line-height:1;display:block;margin-bottom:3px}
+  .tc-translation{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.4);display:block;margin-bottom:2rem}
+  .tc p{font-size:.9rem;color:rgba(239,230,218,.7);line-height:1.8;flex:1;max-width:100%}
+  .tc-bg{position:absolute;right:-1.5rem;bottom:-3rem;font-family:var(--f-disp);font-size:11rem;font-style:italic;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+  .sovereignty-quote{max-width:720px;margin:3.5rem auto 0;text-align:center}
+  .sovereignty-quote p{font-family:var(--f-disp);font-size:clamp(1.1rem,1.8vw,1.5rem);font-style:italic;color:var(--ink);line-height:1.55}
+  .sovereignty-quote cite{display:block;margin-top:.8rem;font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   /* AI & STORYTELLING */
   .story-section{background:var(--bg);padding:7rem 0}
-  .story-box{background:var(--bg2);border:1px solid var(--hair);padding:2.2rem}
-  .story-box .box-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
-  .story-box h4{font-family:var(--f-disp);font-size:1.1rem;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:1rem}
-  .story-box p{font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%}
-  .story-callout{background:var(--ink);padding:2.2rem 2.5rem;margin:0}
-  .story-callout p{font-family:var(--f-disp);font-style:italic;font-size:1.2rem;color:rgba(239,230,218,.9);line-height:1.6;margin:0;max-width:100%}
-  .story-quote-small{border-left:2px solid var(--hair);padding-left:1.4rem;margin-top:2rem}
-  .story-quote-small p{font-family:var(--f-disp);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.7;max-width:100%}
-  .story-quote-small cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:6px}
+  .story-box{background:var(--bg2);border:1px solid var(--hair);padding:1.8rem 2rem}
+  .story-box .box-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+  .story-box p{font-size:.85rem;color:var(--ink2);line-height:1.75;max-width:100%}
+  .story-callout{background:var(--ink);padding:1.8rem 2.2rem}
+  .story-callout p{font-family:var(--f-disp);font-style:italic;font-size:1.1rem;color:rgba(239,230,218,.9);line-height:1.6;margin:0}
+  .story-callout cite{display:block;margin-top:.6rem;font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,230,218,.35)}
+  .story-quote-large{border-left:3px solid var(--hair);padding-left:2rem;margin-top:2.5rem;max-width:680px}
+  .story-quote-large p{font-family:var(--f-disp);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink);line-height:1.3}
+  .story-quote-large cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.8rem}
 
   /* INTERVIEWS VS SURVEY */
   .comparison-section{background:var(--bg2);padding:7rem 0}
   .comparison-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--hair);margin-top:4rem}
-  .comp-col{padding:3rem}
+  .comp-col{padding:2.5rem}
   .comp-col.interviews{background:var(--ink)}
   .comp-col.survey{background:var(--bg)}
-  .comp-col-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:block}
+  .comp-col-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.8rem;display:block}
   .comp-col.interviews .comp-col-label{color:rgba(239,230,218,.35)}
   .comp-col.survey .comp-col-label{color:var(--muted)}
-  .comp-col h3{font-family:var(--f-disp);font-size:1.5rem;margin-bottom:1rem;line-height:1.1}
+  .comp-col h3{font-family:var(--f-disp);font-size:1.4rem;margin-bottom:.8rem;line-height:1.1}
   .comp-col.interviews h3{color:var(--bg)}
   .comp-col.survey h3{color:var(--ink)}
-  .comp-col p{font-size:.9rem;line-height:1.85}
+  .comp-col p{font-size:.88rem;line-height:1.8}
   .comp-col.interviews p{color:rgba(239,230,218,.6)}
   .comp-col.survey p{color:var(--ink2)}
-  .converge-section{margin-top:4rem}
   .converge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);margin-top:2rem}
-  .converge-item{background:var(--bg);padding:1.3rem 1.8rem;display:flex;gap:1rem;align-items:flex-start}
-  .converge-item::before{content:'—';color:var(--accent);font-family:var(--f-mono);flex-shrink:0;margin-top:2px}
-  .converge-item p{font-size:.87rem;color:var(--ink2);line-height:1.75;margin:0}
-  .diverge-note{background:var(--ink);padding:2.2rem 2.5rem;margin-top:2rem}
-  .diverge-note p{font-size:.93rem;color:rgba(239,230,218,.68);line-height:1.85;max-width:100%}
+  .converge-item{background:var(--bg);padding:1.2rem 1.6rem;display:flex;gap:1rem;align-items:flex-start}
+  .converge-item::before{content:'—';color:var(--accent);font-family:var(--f-mono);flex-shrink:0;margin-top:1px}
+  .converge-item p{font-size:.86rem;color:var(--ink2);line-height:1.7;margin:0}
+  .diverge-note{background:var(--ink);padding:2rem 2.4rem;margin-top:2rem}
+  .diverge-note p{font-size:.92rem;color:rgba(239,230,218,.65);line-height:1.8}
   .diverge-note strong{color:var(--bg)}
 
-  /* ETHICAL TENSIONS */
+  /* TENSIONS */
   .tensions-section{background:var(--ink)}
-  .tensions-head{padding:7rem 40px 4rem;max-width:1440px;margin:0 auto}
+  .tensions-head{padding:7rem 40px 3.5rem;max-width:1440px;margin:0 auto}
   .tensions-head .eyebrow{color:rgba(239,230,218,.3)}
   .tensions-head .eyebrow::before{background:rgba(239,230,218,.2)}
-  .tensions-head h2{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:1rem}
-  .tensions-head p{font-size:.95rem;color:rgba(239,230,218,.5);max-width:55ch;line-height:1.8}
+  .tensions-head h2{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:.8rem}
+  .tensions-head p{font-size:.92rem;color:rgba(239,230,218,.45);max-width:52ch;line-height:1.75}
   .tensions-grid{border-top:1px solid rgba(239,230,218,.06)}
-  .tr{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;border-bottom:1px solid rgba(239,230,218,.06);padding:2.5rem clamp(40px,8vw,140px);transition:background .2s}
+  .tr{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;border-bottom:1px solid rgba(239,230,218,.06);padding:2rem clamp(40px,8vw,140px);transition:background .2s}
   .tr:hover{background:rgba(239,230,218,.025)}
-  .tr-side{font-family:var(--f-disp);font-size:clamp(1.4rem,2.5vw,2.4rem);line-height:1.15;transition:color .2s}
+  .tr-side{font-family:var(--f-disp);font-size:clamp(1.3rem,2.2vw,2.2rem);line-height:1.15;transition:color .2s}
   .tr-side.l{text-align:right;color:rgba(239,230,218,.85);font-style:italic}
   .tr:hover .tr-side.l{color:var(--bg)}
   .tr-side.r{color:rgba(239,230,218,.3)}
   .tr:hover .tr-side.r{color:rgba(239,230,218,.6)}
-  .tr-vs{text-align:center;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.25)}
-  .tensions-foot{padding:3rem clamp(40px,8vw,140px) 5rem}
-  .tensions-note{font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;color:rgba(239,230,218,.6);line-height:1.8;max-width:60ch;border-left:1px solid rgba(239,230,218,.2);padding-left:1.2rem}
+  .tr-vs{text-align:center;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.22)}
+  .tensions-foot{padding:2.5rem clamp(40px,8vw,140px) 5rem}
 
-  /* TRUST CONDITIONS */
+  /* TRUST */
   .trust-section{background:var(--bg);padding:7rem 0}
-  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
-  .trust-card{background:var(--bg2);border:1px solid var(--hair);padding:2.2rem;border-top:3px solid var(--ink)}
-  .trust-card h4{font-family:var(--f-disp);font-size:1.2rem;color:var(--ink);margin-bottom:.8rem;line-height:1.2}
-  .trust-card p{font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%}
-  .miro-embed{margin-top:4rem;overflow:hidden;border:1px solid var(--hair)}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+  .trust-card{background:var(--bg2);border:1px solid var(--hair);padding:2rem;border-top:3px solid var(--ink)}
+  .trust-card h4{font-family:var(--f-disp);font-size:1.15rem;color:var(--ink);margin-bottom:.6rem;line-height:1.2}
+  .trust-card p{font-size:.85rem;color:var(--ink2);line-height:1.75}
 
   /* BEFORE YOU USE AI */
   .beforeai-section{background:var(--bg2);padding:7rem 0}
   .bai-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-  .bai-card{background:var(--bg);border:1px solid var(--hair);padding:2rem 2.25rem}
-  .bai-q-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:block}
-  .bai-card h4{font-family:var(--f-disp);font-size:1.25rem;margin-bottom:1rem;line-height:1.3}
-  .bai-card p{font-size:.9rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem;max-width:100%}
-  .bai-card ul{font-size:.9rem;color:var(--ink2);line-height:1.9;margin-bottom:1rem;padding-left:1.25rem}
+  .bai-card{background:var(--bg);border:1px solid var(--hair);padding:1.8rem 2rem}
+  .bai-q-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:block}
+  .bai-card h4{font-family:var(--f-disp);font-size:1.15rem;margin-bottom:.8rem;line-height:1.25;color:var(--ink)}
+  .bai-card p{font-size:.88rem;color:var(--ink2);line-height:1.78;margin-bottom:.8rem}
+  .bai-card p:last-child{margin-bottom:0}
   .bai-ask{font-family:var(--f-mono);font-size:.78rem;color:var(--ink);line-height:1.6}
   .bai-quote-block{border-left:2px solid var(--accent);padding-left:1rem;margin-top:1rem}
-  .bai-quote-block p{font-family:var(--f-disp);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.5}
-  .bai-quote-block cite{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.5rem;display:block}
+  .bai-quote-block p{font-family:var(--f-disp);font-style:italic;font-size:.95rem;color:var(--ink);line-height:1.5;margin:0}
+  .bai-quote-block cite{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.4rem;display:block}
 
-  /* RECOMMENDATIONS */
+  /* RECS */
   .recs-section{background:var(--bg);padding:7rem 0}
-  .recs-tabs{display:flex;gap:0;border-bottom:1px solid var(--hair);margin-bottom:3rem;flex-wrap:wrap}
-  .rec-tab{padding:12px 22px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+  .recs-tabs{display:flex;gap:0;border-bottom:1px solid var(--hair);margin-bottom:2.5rem;flex-wrap:wrap}
+  .rec-tab{padding:11px 20px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
   .rec-tab:hover{color:var(--ink)}
   .rec-tab.active{color:var(--ink);border-bottom-color:var(--ink)}
   .rec-panel{display:none}
   .rec-panel.active{display:block}
   .rec-list{display:grid;gap:1px;background:var(--hair)}
-  .rec-item{background:var(--bg);padding:1.8rem 2.2rem;display:flex;gap:2rem;align-items:flex-start}
-  .rec-n{font-family:var(--f-disp);font-size:1.5rem;font-style:italic;color:var(--hair);line-height:1;flex-shrink:0;width:32px;text-align:right}
-  .rec-item p{font-size:.92rem;color:var(--ink2);line-height:1.78;max-width:100%}
+  .rec-item{background:var(--bg);padding:1.6rem 2rem;display:flex;gap:1.8rem;align-items:flex-start}
+  .rec-n{font-family:var(--f-disp);font-size:1.4rem;font-style:italic;color:var(--hair);line-height:1;flex-shrink:0;width:28px;text-align:right}
+  .rec-item p{font-size:.9rem;color:var(--ink2);line-height:1.75}
   .rec-item strong{color:var(--ink)}
-
-  /* WHAT DOES SUCCESS LOOK LIKE */
-  .success-section{background:var(--ink);padding:7rem 0}
-  .success-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(239,230,218,.3);display:flex;align-items:center;gap:10px;margin-bottom:20px}
-  .success-eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(239,230,218,.2)}
-  .success-opening{font-family:var(--f-disp);font-size:clamp(1.2rem,2vw,1.6rem);font-style:italic;color:rgba(239,230,218,.8);line-height:1.55;max-width:780px;margin:1.5rem 0 4rem}
-  .success-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(239,230,218,.08)}
-  .success-card{background:var(--ink);padding:2.5rem;border:1px solid rgba(239,230,218,.06)}
-  .success-card-n{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block}
-  .success-card h4{font-family:var(--f-disp);font-size:1.3rem;color:var(--bg);margin-bottom:1rem;line-height:1.2}
-  .success-card p{font-size:.9rem;color:rgba(239,230,218,.55);line-height:1.85;max-width:100%}
-
-  /* RESOURCES */
-  .resources-section{background:var(--bg2);padding:7rem 0}
-  .resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
-  .resource-card{background:var(--bg);border:1px solid var(--hair);padding:2.2rem;display:block;transition:border-color .2s,transform .2s;border-top:3px solid var(--hair)}
-  .resource-card:hover{border-top-color:var(--accent);transform:translateY(-4px)}
-  .resource-tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
-  .resource-card h4{font-family:var(--f-disp);font-size:1.3rem;color:var(--ink);margin-bottom:8px}
-  .resource-card p{font-size:.87rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem;max-width:100%}
-  .resource-url{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
 
   /* CLOSING */
   .closing-section{min-height:100vh;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:7rem 40px;text-align:center;position:relative;overflow:hidden}
@@ -304,11 +271,11 @@
   .closing-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
   .closing-inner .eyebrow{color:rgba(239,230,218,.28);justify-content:center}
   .closing-inner .eyebrow::before{background:rgba(239,230,218,.15)}
-  .closing-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:2.5rem}
-  .closing-inner p{font-size:1rem;color:rgba(239,230,218,.55);line-height:1.95;margin-bottom:1.3rem}
-  .closing-big{font-family:var(--f-disp);font-size:clamp(2.2rem,4.5vw,4rem);font-style:italic;color:var(--bg);line-height:1.15;margin:5rem auto;max-width:820px}
-  .closing-big cite{display:block;margin-top:1.2rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,230,218,.3)}
-  .closing-maori{font-family:var(--f-disp);font-size:1.8rem;font-style:italic;color:rgba(239,230,218,.45);margin-top:1.5rem}
+  .closing-title{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:2rem}
+  .closing-inner p{font-size:1rem;color:rgba(239,230,218,.5);line-height:1.9;margin-bottom:1.2rem}
+  .closing-big{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.8rem);font-style:italic;color:var(--bg);line-height:1.15;margin:4rem auto;max-width:820px}
+  .closing-big cite{display:block;margin-top:1rem;font-family:var(--f-mono);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,230,218,.3)}
+  .closing-maori{font-family:var(--f-disp);font-size:1.6rem;font-style:italic;color:rgba(239,230,218,.4);margin-top:1.5rem}
 
   /* FOOTER */
   .footer{background:#021f21;padding:3rem 0 2rem}
@@ -319,19 +286,17 @@
   .footer-l .fs{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,230,218,.22)}
   .footer-r{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,230,218,.22);text-align:right}
 
-  /* FADE IN */
   .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
   .fi.in{opacity:1;transform:none}
 
-  /* RESPONSIVE */
   @media(max-width:1024px){
     .section-dots{display:none}
-    .intro-grid,.rq-grid,.themes-header,.method-grid,.airisk-grid,.comparison-cols,.fw-grid,.success-grid{grid-template-columns:1fr;gap:3rem}
-    .triptych,.trust-grid,.resources-grid,.history-callouts{grid-template-columns:1fr}
+    .intro-grid,.rq-grid,.themes-header,.method-grid,.airisk-grid,.comparison-cols,.fw-grid{grid-template-columns:1fr;gap:3rem}
+    .triptych,.trust-grid,.history-callouts{grid-template-columns:1fr}
     .timeline{grid-template-columns:1fr;gap:2rem;border-top:none}
-    .tl-item{border-left:2px solid var(--hair);padding:0 0 2rem 2rem;padding-top:0}
+    .tl-item{border-left:2px solid var(--hair);padding:0 0 2rem 2rem}
     .tl-item::before{top:4px;left:-7px}
-    .tr{padding:2rem 2rem;grid-template-columns:1fr 60px 1fr}
+    .tr{padding:1.8rem 2rem;grid-template-columns:1fr 60px 1fr}
     .footer-inner{flex-direction:column;gap:1.5rem;text-align:center}
     .footer-l{flex-direction:column}
     .closing-section{text-align:left;padding:5rem 28px}
@@ -339,13 +304,9 @@
     .converge-grid,.bai-grid,.country-grid,.participants-stats{grid-template-columns:1fr}
   }
   @media(max-width:720px){
-    .hero-stats{flex-direction:column;gap:2rem}
-    .hero-stat{border-right:none;border-bottom:1px solid rgba(239,230,218,.08);padding:0 0 2rem}
-    .hero-stat:last-child{border-bottom:none}
-    .sub-qs{grid-template-columns:1fr}
     .c{padding:0 20px}
-    .c-narrow{padding:0 20px}
     .nav-inner{padding:0 20px}
+    .sub-qs{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -353,8 +314,7 @@
 
 <div id="progress"></div>
 
-<!-- NAV -->
-<nav class="nav" id="nav-el">
+<nav class="nav">
   <div class="nav-inner">
     <div class="brand">
       <img src="../nrxo-auaha-logo.png" alt="NRxo Auaha">
@@ -367,7 +327,6 @@
   </div>
 </nav>
 
-<!-- SECTION DOTS -->
 <div class="section-dots" id="dots"></div>
 
 <!-- HERO -->
@@ -375,6 +334,7 @@
   <div class="hero-grid"></div>
   <img class="hero-wm" src="../nrxo-auaha-logo.png" alt="">
   <div class="hero-inner">
+    <img class="hero-portrait" src="images/nadine-headshot.jpg" alt="Nadine Young">
     <div class="hero-eyebrow">Master of Technological Futures · AcademyEX · April 2026</div>
     <h1>Ethical AI &amp;<br><em>Indigenous</em><br>Storytelling</h1>
     <p class="hero-desc">Protecting language, data and culture in Aotearoa — grounded in kaupapa Māori and guided by Te Ara Tika.</p>
@@ -390,37 +350,35 @@
   </blockquote>
 </div>
 
-<!-- MY STORY / INTRODUCTION -->
+<!-- INTRODUCTION -->
 <section class="intro-section" id="s-intro" data-label="Introduction">
   <div class="c">
     <div class="intro-grid fi">
       <div>
         <div class="intro-eyebrow">Introduction · Chapter One</div>
-        <h2 class="intro-title">Where This<br><em style="font-style:italic;">Research Began</em></h2>
+        <h2 class="intro-title">Where This<br><em style="font-style:italic">Research Began</em></h2>
         <div class="intro-body">
           <p>For most of my life, I knew I was Māori — but I didn't publicly claim it. I felt I wasn't the right skin colour. Couldn't speak te reo. Had been told not to trust Māori.</p>
-          <p>That silence is what colonisation does — it doesn't just take language, it takes your sense of belonging.</p>
-          <p>This research started as a personal question: <strong>what happens when AI fills those gaps with the wrong answers?</strong></p>
-          <p>When people reconnecting with their language turn to AI tools for help, they encounter systems trained on scraped data, built without consent, and designed for scale — not for cultural integrity.</p>
+          <p>That silence is what colonisation does. This research started as one question: <strong>what happens when AI fills those gaps with the wrong answers?</strong></p>
         </div>
       </div>
       <div>
         <div class="gap-cards">
           <div class="gap-card">
-            <span class="gap-card-label">The Research Gap</span>
-            <p>Only <strong>21% of Māori</strong> report conversational te reo proficiency — yet generative AI is already embedded in education, health, and government whether communities are ready or not.</p>
+            <span class="gap-card-label">The Gap</span>
+            <p>Only <strong>21% of Māori</strong> report conversational te reo proficiency — yet generative AI is already embedded in education, health, and government.</p>
           </div>
           <div class="gap-card">
             <span class="gap-card-label">The Scale Problem</span>
-            <p>For widely spoken languages, AI brings scale and access. For te reo Māori, AI brings <strong>confident-sounding errors at scale</strong> — with no existing peer-reviewed frameworks for generative AI and Indigenous knowledge systems.</p>
+            <p>For widely spoken languages, AI brings access. For te reo Māori, it brings <strong>confident-sounding errors at scale</strong>.</p>
           </div>
           <div class="gap-card">
             <span class="gap-card-label">Whakamā</span>
-            <p>The shame of reconnecting — created by colonisation — is a real, documented experience. AI that gets te reo wrong doesn't just mislead people. It reinforces the silence that was already there.</p>
+            <p>The shame of reconnecting — created by colonisation — is real. AI that gets te reo wrong reinforces the silence that was already there.</p>
           </div>
           <div class="gap-card">
-            <span class="gap-card-label">The 1M Speaker Goal</span>
-            <p>Aotearoa has set a target of <strong>one million te reo Māori speakers by 2040</strong>. AI has arrived before the governance frameworks needed to make it safe have been built.</p>
+            <span class="gap-card-label">The Goal</span>
+            <p><strong>One million te reo Māori speakers by 2040.</strong> AI has arrived before the governance needed to make it safe has been built.</p>
           </div>
         </div>
       </div>
@@ -428,13 +386,12 @@
   </div>
 </section>
 
-<!-- LITERATURE REVIEW: HISTORY -->
+<!-- HISTORY -->
 <section class="history-section" id="s-history" data-label="History">
   <div class="c">
     <div class="eyebrow fi">Literature Review · Chapter Two</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;">The History We<br><em style="font-style:italic;">Cannot Ignore</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-top:1rem;">Te reo Māori did not arrive at this moment of digital vulnerability by accident. Understanding where we are requires understanding what was done — and how fast it happened.</p>
-
+    <h2 class="fi section-title">The History We<br><em style="font-style:italic">Cannot Ignore</em></h2>
+    <p class="fi section-intro">Te reo Māori did not arrive at this moment of digital vulnerability by accident.</p>
     <div class="timeline fi">
       <div class="tl-item">
         <span class="tl-year">1867</span>
@@ -444,67 +401,65 @@
       <div class="tl-item">
         <span class="tl-year">1900–60</span>
         <div class="tl-label">Fluency Collapses</div>
-        <p class="tl-desc">~95% fluency to 25% within two generations — one of the fastest language collapses in recorded history.</p>
+        <p class="tl-desc">~95% fluency to 25% within two generations.</p>
       </div>
       <div class="tl-item">
         <span class="tl-year">1982</span>
         <div class="tl-label">Kōhanga Reo</div>
-        <p class="tl-desc">Community-led immersion — Māori fighting back. Language nests begin reclaiming what policy destroyed.</p>
+        <p class="tl-desc">Community-led immersion — Māori fighting back.</p>
       </div>
       <div class="tl-item">
         <span class="tl-year">1987</span>
         <div class="tl-label">Māori Language Act</div>
-        <p class="tl-desc">Te reo officially recognised as an official language. Māori Language Commission established.</p>
+        <p class="tl-desc">Te reo officially recognised. Language Commission established.</p>
       </div>
       <div class="tl-item now">
         <span class="tl-year">Today</span>
         <div class="tl-label">Fragile Recovery</div>
-        <p class="tl-desc">21% conversational. 1M speaker goal by 2040. AI has arrived — before governance has caught up.</p>
+        <p class="tl-desc">21% conversational. 1M speaker goal by 2040. AI has arrived before governance has caught up.</p>
       </div>
     </div>
-
     <div class="history-callouts fi">
       <div class="history-callout">
         <h4>AI Misrepresents Te Reo</h4>
-        <p>Gender-neutral 'ia' given colonial gender roles. Haka reduced to performance. Whakapapa stripped from terms that cannot be separated from it. Errors normalised at scale.</p>
+        <p>Gender-neutral 'ia' given colonial gender roles. Whakapapa stripped from terms that carry it. Errors normalised at scale.</p>
       </div>
       <div class="history-callout">
         <h4>A Global Indigenous Parallel</h4>
-        <p>Canada, Australia, Brazil, and communities across the Pacific face the same fight. The UN Declaration on the Rights of Indigenous Peoples states data must be community-controlled.</p>
+        <p>Canada, Australia, Brazil, and Pacific communities face the same fight. The UN Declaration states data must be community-controlled.</p>
       </div>
       <div class="history-callout">
         <h4>Digital Colonialism</h4>
-        <p>AI can replicate extractive patterns of colonisation — at unprecedented speed and scale — without anyone intending harm. Intent does not determine impact.</p>
+        <p>AI can replicate extractive patterns of colonisation at unprecedented speed — without anyone intending harm.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LITERATURE REVIEW: AI RISK -->
+<!-- AI RISK -->
 <section class="airisk-section" id="s-ai-risk" data-label="AI Risk">
   <div class="c">
     <div class="eyebrow fi">Literature Review · Chapter Two</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;">What the Research<br><em style="font-style:italic;">Tells Us</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-top:1rem;">A body of existing literature frames both the risks and the governance mechanisms already available — the question is whether they are being applied.</p>
-
+    <h2 class="fi section-title">What the Research<br><em style="font-style:italic">Tells Us</em></h2>
+    <p class="fi section-intro">The governance frameworks already exist. The question is whether they are being applied.</p>
     <div class="airisk-grid fi">
       <div class="airisk-block">
         <h3>Data Sovereignty Frameworks</h3>
         <div class="framework-item">
           <span class="fw-name">CARE Principles</span>
-          <p class="fw-desc">Collective benefit, Authority to control, Responsibility, Ethics — the global Indigenous data sovereignty framework developed to counter extractive research practices.</p>
+          <p class="fw-desc">Collective benefit, Authority to control, Responsibility, Ethics — the global Indigenous data sovereignty standard.</p>
         </div>
         <div class="framework-item">
           <span class="fw-name">Te Mana Raraunga</span>
-          <p class="fw-desc">The Māori Data Sovereignty Network. Data must serve the interests of Māori communities and nations — not the organisations that collect it.</p>
+          <p class="fw-desc">Māori Data Sovereignty Network — data must serve the interests of Māori communities and nations.</p>
         </div>
         <div class="framework-item">
           <span class="fw-name">Noa / Tapu / Rāhui</span>
-          <p class="fw-desc">Practical tikanga-based classification: unrestricted, sacred/restricted, temporary embargo. Not new — tikanga in action, applied to the digital context.</p>
+          <p class="fw-desc">Tikanga-based classification: unrestricted, sacred/restricted, or temporarily embargoed. Not new — tikanga in action.</p>
         </div>
         <div class="framework-item">
-          <span class="fw-name">UN Declaration (UNDRIP)</span>
-          <p class="fw-desc">Indigenous peoples' rights over cultural heritage, traditional knowledge, and data. New Zealand is a signatory — these rights extend into the digital age.</p>
+          <span class="fw-name">UNDRIP</span>
+          <p class="fw-desc">Indigenous peoples' rights over cultural heritage and data. New Zealand is a signatory — these rights extend into the digital age.</p>
         </div>
       </div>
       <div class="airisk-block">
@@ -513,22 +468,22 @@
           <div class="country-item">
             <span class="country-flag">🇧🇷</span>
             <span class="country-name-label">Brazil</span>
-            <p class="country-desc">Claudio Pinhanez — AI in Indigenous communities. Language preservation versus extraction risk. The same tensions, different geography.</p>
+            <p class="country-desc">Language preservation versus extraction risk — the same tensions, different geography.</p>
           </div>
           <div class="country-item">
             <span class="country-flag">🇨🇦</span>
             <span class="country-name-label">Canada</span>
-            <p class="country-desc">First Nations AI governance models with community veto rights over data use. A model for what genuine community authority looks like.</p>
+            <p class="country-desc">First Nations AI governance with community veto rights over data use.</p>
           </div>
           <div class="country-item">
             <span class="country-flag">🇦🇺</span>
             <span class="country-name-label">Australia</span>
-            <p class="country-desc">Aboriginal language AI tools — both successes and cautionary tales. Community-led initiatives work. Top-down ones often cause harm.</p>
+            <p class="country-desc">Aboriginal language AI tools — both successes and cautionary tales.</p>
           </div>
           <div class="country-item">
             <span class="country-flag">🌍</span>
             <span class="country-name-label">UN Declaration</span>
-            <p class="country-desc">Indigenous peoples' rights over cultural heritage extend to data. International law already provides the framework — it needs enforcement.</p>
+            <p class="country-desc">International law provides the framework — it needs enforcement.</p>
           </div>
         </div>
       </div>
@@ -540,9 +495,8 @@
 <section class="method-section" id="s-methodology" data-label="Methodology">
   <div class="c">
     <div class="eyebrow fi">Methodology · Chapter Three</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;">How This Research<br><em style="font-style:italic;">Was Done</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-top:1rem;">The methodology was not chosen for convenience — it was chosen because the community and the kaupapa demanded it.</p>
-
+    <h2 class="fi section-title">How This Research<br><em style="font-style:italic">Was Done</em></h2>
+    <p class="fi section-intro">The methodology was chosen because the community and the kaupapa demanded it.</p>
     <div class="method-grid fi">
       <div>
         <div class="method-frameworks">
@@ -560,8 +514,8 @@
           </div>
         </div>
         <div class="method-quote">
-          <p>"Head and heart to the puku — analytical mind, emotional presence, and deep intuition. All three were active throughout this research."</p>
-          <cite>— Dan Te Whenua Walker's framing, applied throughout</cite>
+          <p>"Head and heart to the puku — analytical mind, emotional presence, and deep intuition."</p>
+          <cite>— Dan Te Whenua Walker's framing</cite>
         </div>
       </div>
       <div>
@@ -584,11 +538,11 @@
           </div>
           <div class="participant-type">
             <span class="pt-label">Tangata Tiriti</span>
-            <p>AI and technology practitioners working alongside Māori communities in Aotearoa</p>
+            <p>AI and technology practitioners working alongside Māori communities</p>
           </div>
           <div class="participant-type">
             <span class="pt-label">International Indigenous Voice</span>
-            <p>An Indigenous researcher from Brazil — bringing comparative perspective on global parallels</p>
+            <p>An Indigenous researcher from Brazil — comparative global perspective</p>
           </div>
         </div>
       </div>
@@ -600,31 +554,27 @@
 <section class="frameworks-section" id="s-frameworks" data-label="Frameworks">
   <div class="c">
     <div class="eyebrow fi">Research Grounding</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;margin-bottom:.5rem;">Frameworks That<br><em style="font-style:italic;">Guided This Work</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;">Not external impositions — living guides that shaped how the research was conducted, why it is necessary, and who it is for.</p>
+    <h2 class="fi section-title">Frameworks That<br><em style="font-style:italic">Guided This Work</em></h2>
     <div class="fw-grid fi">
       <div class="fw-card">
         <div class="fw-head"><h3>Te Ara Tika</h3><div class="fw-sub">Kaupapa Māori Ethical Framework</div></div>
         <div class="fw-body">
-          <p>Te Ara Tika grounds this research in four core principles that guide not only how research is conducted, but why it is necessary — to uphold mana, protect taonga, and contribute to safe, culturally grounded practice.</p>
           <ul class="fw-list">
-            <li><strong>Whakapapa</strong> — Building meaningful and genuine relationships, honouring connection to people, place, and lineage</li>
-            <li><strong>Tika</strong> — Upholding integrity across all aspects of the research and design</li>
-            <li><strong>Manaakitanga</strong> — Creating space that values cultural and social background, where participants can share honestly</li>
-            <li><strong>Mana</strong> — Ensuring both the research and participants' words are honoured and treated with the respect they deserve</li>
+            <li><strong>Whakapapa</strong> — Genuine relationships, honouring connection to people, place, and lineage</li>
+            <li><strong>Tika</strong> — Integrity across all aspects of the research</li>
+            <li><strong>Manaakitanga</strong> — Space that values cultural background, where participants can share honestly</li>
+            <li><strong>Mana</strong> — Honouring participants and their words with the respect they deserve</li>
           </ul>
         </div>
       </div>
       <div class="fw-card">
         <div class="fw-head"><h3>Kaupapa Māori Research</h3><div class="fw-sub">Indigenous Research Methodology</div></div>
         <div class="fw-body">
-          <p>Kaupapa Māori research centres Māori values, language, priorities, and worldview. It recognises the researcher's responsibility as a Māori researcher reconnecting with language and whakapapa.</p>
           <ul class="fw-list">
             <li>Research that <strong>serves</strong> the community it engages with, not just the academy</li>
-            <li>Supports deeper exploration of how AI interacts with Māori language and knowledge systems</li>
             <li>Elevates Māori voices and grounds findings in lived experience</li>
-            <li>Ensures research upholds relational accountability; community benefit is prioritised</li>
-            <li>A Māori-first, tikanga-led approach — because only Māori can determine appropriate use and protection of their language</li>
+            <li>Upholds relational accountability — community benefit is prioritised</li>
+            <li>A Māori-first, tikanga-led approach — only Māori can determine appropriate use of their language</li>
           </ul>
         </div>
       </div>
@@ -636,9 +586,9 @@
 <section class="rq-section" id="s-research" data-label="Research Question">
   <div class="c">
     <div class="rq-grid fi">
-      <div class="rq-left">
+      <div>
         <div class="eyebrow">Primary Research Question</div>
-        <h2 class="rq-title">The<br><em style="font-style:italic;">Kaupapa</em></h2>
+        <h2 class="rq-title">The<br><em style="font-style:italic">Kaupapa</em></h2>
       </div>
       <div>
         <div class="rq-card">
@@ -661,29 +611,19 @@
     <div class="themes-header fi">
       <div>
         <div class="eyebrow">Findings · Chapter Four</div>
-        <h2 style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;line-height:1;">Five<br><em style="font-style:italic;">Interconnected</em><br>Themes</h2>
+        <h2 class="section-title">Five<br><em style="font-style:italic">Interconnected</em><br>Themes</h2>
       </div>
-      <div>
-        <p class="s-intro">These themes emerged through thematic analysis of ten interviews and twenty survey responses. They are deeply interconnected and form a coherent narrative about where AI currently sits in relation to Māori language, knowledge, and data.</p>
-      </div>
+      <p class="s-intro">These themes emerged from ten interviews and twenty survey responses — deeply interconnected, forming one coherent story.</p>
     </div>
 
     <div class="theme-item fi">
       <div class="theme-n">01</div>
       <div class="theme-content">
         <h3>AI as a Crossroads of Risk and Opportunity</h3>
-        <p>AI is not being experienced as neutral. It is understood as a critical point of decision — a moment where choices made now will shape future outcomes. Disengagement is not a safe option; choosing not to engage does not remove AI's influence, it shifts control elsewhere. A double digital divide emerged: not only lack of access, but lack of AI literacy.</p>
+        <p>AI is a critical decision point — choices made now will shape future outcomes. Disengagement is not safety; it shifts control to others. A double digital divide emerged: not just lack of access, but lack of AI literacy.</p>
         <div class="theme-quote-block">
-          <p>"We're at a crossroads. We can either say, no, AI is bad, let's ignore it, and then we will be recolonised, but in a way that no one can comprehend right now… the risk is if we don't actually grasp it now."</p>
+          <p>"We're at a crossroads. We can either say AI is bad, let's ignore it, and then we will be recolonised — but in a way that no one can comprehend right now."</p>
           <cite>— Karaitiana Taiuru, interview 2025</cite>
-        </div>
-        <div class="theme-quote-block">
-          <p>"There are so many people whose digital literacy was already low before AI. What AI does is take that gap and turn it into a chasm."</p>
-          <cite>— Smith, interview 2025</cite>
-        </div>
-        <div class="theme-quote-block">
-          <p>"I think there is a risk that the tools don't work. That's the main risk. I've seen too much hype around AI and people getting disappointed."</p>
-          <cite>— Research participant, interview 2025</cite>
         </div>
       </div>
     </div>
@@ -692,32 +632,22 @@
       <div class="theme-n">02</div>
       <div class="theme-content">
         <h3>Data Sovereignty as a Non-Negotiable Foundation</h3>
-        <p>Before considering how AI might support Māori language or cultural revitalisation, the question of data must be addressed first. Every participant returned to data sovereignty as the starting point. The tapu/noa/rāhui classification framework provides a practical mechanism for translating sovereignty principles into applied governance decisions.</p>
+        <p>Every participant returned to data sovereignty as the starting point. Before AI can support Māori language or culture, the question of who owns and controls the data must be resolved first.</p>
         <div class="theme-quote-block">
-          <p>"We get brought in at the eighth hour and it's like, well, everything's already happened. It's a rubber stamp. The opportunity to influence and co-design has been and gone."</p>
-          <cite>— Research participant, interview 2025</cite>
-        </div>
-        <div class="theme-quote-block">
-          <p>"We had to work out how to identify someone's whakapapa early on in the conversation to determine which buckets to put the data in — and then who had authority to let iwi data be used for another purpose."</p>
+          <p>"We get brought in at the eighth hour — everything's already happened. The opportunity to influence and co-design has been and gone."</p>
           <cite>— Research participant, interview 2025</cite>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="c">
     <div class="theme-item fi">
       <div class="theme-n">03</div>
       <div class="theme-content">
         <h3>Governance Must Be Tikanga-Based, Not Tokenistic</h3>
-        <p>Having Māori present in a process is not the same as having Māori governance. Tokenistic inclusion does not simply fall short — it can actively cause harm by creating the appearance of cultural safety without any real shift in decision-making power. Effective governance requires collective expertise across technology, te reo Māori, tikanga, and Te Tiriti understanding.</p>
+        <p>Having Māori present is not the same as having Māori governance. Tokenistic inclusion can actively cause harm — it creates the appearance of cultural safety without any real shift in decision-making power.</p>
         <div class="theme-quote-block">
-          <p>"It needs to be someone with the technology, the te reo Māori knowledge, and the knowledge of Te Tiriti. And it's probably not always just one person."</p>
+          <p>"It needs someone with the technology, the te reo Māori knowledge, and the knowledge of Te Tiriti. And it's probably not always just one person."</p>
           <cite>— Karaitiana Taiuru, interview 2025</cite>
-        </div>
-        <div class="theme-quote-block">
-          <p>"The interesting thing about running your own business is that you can say no to things. I've had things come through, and we've decided, no, this is low-key disrespectful to our language, and we want no part of it. A corporation might not see that."</p>
-          <cite>— Research participant, interview 2025</cite>
         </div>
       </div>
     </div>
@@ -726,11 +656,7 @@
       <div class="theme-n">04</div>
       <div class="theme-content">
         <h3>Community Authority and Co-Design as the Only Viable Path</h3>
-        <p>Community is not a stakeholder — it is the source of authority. AI development must begin with community, be shaped with community, and remain accountable throughout. Technology can be a pathway into deeper human connection — but it cannot substitute for it. The goal is always to bring people to the marae, to the kaumātua, to the language in its living form.</p>
-        <div class="theme-quote-block">
-          <p>"An indigenous-led AI development would bring the spiritual aspect — because we are actually spiritual people, and our language is by default spiritual as well."</p>
-          <cite>— Dan Te Whenua Walker, interview 2025</cite>
-        </div>
+        <p>Community is not a stakeholder — it is the source of authority. Technology can be a pathway into deeper human connection, but it cannot substitute for it. The goal is always to bring people to the marae, to the kaumātua, to the living language.</p>
         <div class="theme-quote-block">
           <p>"The technology can help, but it will never replace that feeling of connection."</p>
           <cite>— Smith, interview 2025</cite>
@@ -742,13 +668,9 @@
       <div class="theme-n">05</div>
       <div class="theme-content">
         <h3>The Persistent Gap Between Principle and Practice</h3>
-        <p>The principles for ethical AI already exist. The challenge is translating them into practice. This is not a gap of intent — it is a gap of structure, resourcing, coordination, and practical guidance. The issue is not a lack of knowledge — it is the absence of architecture to act on what is already known.</p>
+        <p>The principles for ethical AI already exist. The challenge is applying them. This is not a gap of intent — it is a gap of structure, resourcing, and practical guidance.</p>
         <div class="theme-quote-block">
-          <p>"I can see that there was a demand. A lot of people talked about wanting to implement Māori data sovereignty, but they didn't know how. At the time, there wasn't much around how do you operationalise it — how do you put it into practice."</p>
-          <cite>— Research participant, interview 2025</cite>
-        </div>
-        <div class="theme-quote-block">
-          <p>"There are a lot of silos. We're all out here trying to do something, and some people are working with others, but a lot of people don't want to work together — even though we're working toward the same goal of revitalising te reo Māori."</p>
+          <p>"A lot of people talked about wanting to implement Māori data sovereignty — but they didn't know how to operationalise it."</p>
           <cite>— Research participant, interview 2025</cite>
         </div>
       </div>
@@ -758,39 +680,39 @@
 
 <!-- PULL QUOTE AFTER THEMES -->
 <div class="pull fi">
-  <blockquote>"We are a bicultural country… maybe there's a bit of, I don't want to get something wrong. Whereas if we did a little bit more work about what that means, we could actually move faster."<cite>— Young, C., interview 2025</cite></blockquote>
+  <blockquote>"We are a bicultural country… if we did a little bit more work about what that means, we could actually move faster."<cite>— Young, C., interview 2025</cite></blockquote>
 </div>
 
-<!-- DATA SOVEREIGNTY DEEP DIVE -->
+<!-- DATA SOVEREIGNTY -->
 <section class="sovereignty-section" id="s-sovereignty" data-label="Data Sovereignty">
   <div class="c fi">
     <div class="eyebrow">Deep Dive · Findings</div>
-    <h2 style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;margin-bottom:1rem;">Data Sovereignty in Practice</h2>
-    <p style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;">A framework for classifying Māori data within AI contexts — moving from abstract principle into operational decision-making before any AI system is built or procured.</p>
+    <h2 class="section-title">Data Sovereignty in Practice</h2>
+    <p class="section-intro">Classifying Māori data before any AI system is built or procured.</p>
   </div>
-  <div class="triptych fi" style="margin-top:4rem">
+  <div class="triptych fi" style="margin-top:3.5rem">
     <div class="tc noa">
       <span class="tc-word">Noa</span>
       <span class="tc-translation">Open / Unrestricted</span>
-      <p>Data already in the public domain. This can be digitised and used within AI systems. It carries no special restriction — freely accessible and appropriate for open engagement.</p>
+      <p>Publicly available data. Can be digitised and used within AI systems with appropriate care.</p>
       <div class="tc-bg">Noa</div>
     </div>
     <div class="tc tapu">
       <span class="tc-word">Tapu</span>
       <span class="tc-translation">Controlled / Restricted</span>
-      <p>Sensitive cultural data that should be kept within Aotearoa. Requires careful custodianship and clear authority over who may access it and how. Not for open digitisation or global AI training.</p>
+      <p>Sensitive cultural data to be kept within Aotearoa. Requires clear authority over who may access it and how.</p>
       <div class="tc-bg">Tapu</div>
     </div>
     <div class="tc rahui">
       <span class="tc-word">Rāhui</span>
       <span class="tc-translation">Sacred / Must Not Be Digitised</span>
-      <p>Whakapapa, sacred knowledge, medicines, and knowledge held within specific families. This should never be digitised or fed into AI systems. Its protection is non-negotiable.</p>
+      <p>Whakapapa, sacred knowledge, medicines, and family-held knowledge. Never digitised or fed into AI systems.</p>
       <div class="tc-bg">Rāhui</div>
     </div>
   </div>
   <div class="c">
     <div class="sovereignty-quote fi">
-      <p>"We can't rely on other people's principles. We need to create our own, and we need tino rangatiratanga, mana motuhake to do that. And that resides back with our hapū and our marae."</p>
+      <p>"We can't rely on other people's principles. We need to create our own, and we need tino rangatiratanga, mana motuhake to do that."</p>
       <cite>— Karaitiana Taiuru, interview 2025</cite>
     </div>
   </div>
@@ -805,47 +727,43 @@
 <section class="story-section" id="s-storytelling" data-label="AI &amp; Storytelling">
   <div class="c">
     <div class="eyebrow fi">Interview Findings · Deep Dive</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;margin-bottom:1rem;">AI &amp; Indigenous<br><em style="font-style:italic;">Storytelling</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-bottom:4rem;">Storytelling in te ao Māori is not merely communication — it is the transmission of identity, whakapapa, and mana across generations. Two questions drew the most honest, personal, and complex responses across all interviews.</p>
+    <h2 class="fi section-title">AI &amp; Indigenous<br><em style="font-style:italic">Storytelling</em></h2>
+    <p class="fi section-intro">Two questions drew the most honest and complex responses across all interviews.</p>
 
-    <div class="fi" style="margin-bottom:5rem">
+    <div class="fi" style="margin:4rem 0">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
         <div>
-          <div class="eyebrow" style="margin-bottom:1.2rem">Question 1</div>
-          <h3 style="font-family:var(--f-disp);font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-.01em;color:var(--ink);margin-bottom:1.5rem;line-height:1.2"><em style="font-style:italic">What does success look like in 10 years?</em></h3>
-          <p style="font-size:.93rem;color:var(--ink2);line-height:1.88;max-width:62ch;margin-bottom:1.2rem">Sovereignty and ownership were central to almost every response. Participants envisioned indigenous communities — not organisations or governments — owning and controlling their own AI systems, with data stored on community-held infrastructure.</p>
-          <p style="font-size:.93rem;color:var(--ink2);line-height:1.88;max-width:62ch;margin-bottom:1.2rem">Legislative reform was highlighted as a prerequisite. Existing laws — the Copyright Act, Privacy Act, and harmful digital communications legislation — were described as already decades out of date, leaving mātauranga Māori exposed and unprotected.</p>
-          <p style="font-size:.93rem;color:var(--ink2);line-height:1.88;max-width:62ch">Education and workforce pathways featured strongly. Participants imagined wānanga offering AI training and indigenous people leading in AI careers — some felt this shift could begin within five years, not ten.</p>
+          <div class="eyebrow" style="margin-bottom:1rem">Question 1</div>
+          <h3 style="font-family:var(--f-disp);font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink);margin-bottom:1.2rem;line-height:1.2"><em style="font-style:italic">What does success look like in 10 years?</em></h3>
+          <p style="font-size:.92rem;color:var(--ink2);line-height:1.82;max-width:60ch">Participants envisioned communities owning their own AI systems with data on community-held infrastructure — modelled on Te Hiku Media. Legislative reform and Indigenous-led AI careers featured in almost every response.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:1.5rem">
-          <div class="story-box"><div class="box-label">Sovereignty &amp; Ownership</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Each major iwi having their own AI capability — built by and for their community. Data on community-held servers. AI locked down with full kaitiakitanga, like Te Hiku Media's model.</p></div>
-          <div class="story-box"><div class="box-label">Legislative Reform</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Copyright Act, Privacy Act, and digital harm laws described as decades out of date. Success in 2035 means those gaps are closed and mātauranga Māori is protected in law.</p></div>
-          <div class="story-box"><div class="box-label">Global Collaboration</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Indigenous AI models shared and respected across borders — Māori, Native American, and other communities learning from each other. Though others cautioned that politics often gets in the way.</p></div>
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div class="story-box"><div class="box-label">Sovereignty &amp; Ownership</div><p>Each major iwi with their own AI capability — built by and for their community, with full kaitiakitanga.</p></div>
+          <div class="story-box"><div class="box-label">Legislative Reform</div><p>Copyright Act, Privacy Act, and digital harm laws described as decades out of date. Success means those gaps are closed.</p></div>
           <div class="story-callout">
             <p>"Not one indigenous sovereign AI — we will have multiple, owned 100% by indigenous communities, not organisations."</p>
-            <cite style="display:block;margin-top:.75rem;font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,230,218,.4)">— Lee Timutimu, interview 2025</cite>
+            <cite>— Lee Timutimu, interview 2025</cite>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="hair-line fi" style="margin-bottom:5rem"></div>
+    <div class="hair-line fi" style="margin-bottom:4rem"></div>
 
     <div class="fi">
-      <div class="eyebrow" style="margin-bottom:1.2rem">Question 2</div>
-      <h3 style="font-family:var(--f-disp);font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-.01em;color:var(--ink);margin-bottom:1.5rem;line-height:1.2;max-width:720px"><em style="font-style:italic">"How would you feel if AI told your story to future generations — knowing there could be biases, different versions from different whānau members?"</em></h3>
-      <p style="font-size:.93rem;color:var(--ink2);line-height:1.88;max-width:62ch;margin-bottom:3rem">This prompted the most personal and emotionally honest responses across all interviews. Feelings were mixed, nuanced, and often contradictory — reflecting the genuine complexity of the issue.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem">
-        <div class="story-box"><div class="box-label">Strong Desire for Control</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Most participants felt AI should not tell their story without direct input. Stories are owned at the whānau level — control over one's narrative should stay with family, not be handed to a machine or organisation.</p></div>
-        <div class="story-box"><div class="box-label">Openness — With Conditions</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Some were comfortable in principle if they had contributed directly. One person drew a firm line at their private life, while feeling at peace with their documented professional life already online.</p></div>
-        <div class="story-box"><div class="box-label">Scepticism About Authenticity</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">AI could archive stories — but cannot replace the warmth and connection of a person telling a story at a tangi, around a table, in the moment.</p></div>
-        <div class="story-box"><div class="box-label">Fear of Bias &amp; Distortion</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">Different whānau members hold different versions of the same person. The data fed in shapes what comes out — like Chinese whispers. The solution: present multiple perspectives rather than flattening them.</p></div>
-        <div class="story-box"><div class="box-label">Multiple Truths as Valid</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">"That's quite a Western construct — we always talk about there being multiple truths." AI's drive toward singular, statistically likely outputs conflicts with this worldview.</p></div>
-        <div class="story-box"><div class="box-label">Generational Perspective</div><p style="font-size:.87rem;color:var(--ink2);line-height:1.8;max-width:100%">What feels uncomfortable now — like a Black Mirror episode — future generations may consider completely normal. The real question isn't how we feel today. It's what our mokopuna will think is ordinary.</p></div>
+      <div class="eyebrow" style="margin-bottom:1rem">Question 2</div>
+      <h3 style="font-family:var(--f-disp);font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink);margin-bottom:1.2rem;line-height:1.2;max-width:680px"><em style="font-style:italic">"How would you feel if AI told your story to future generations?"</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem">
+        <div class="story-box"><div class="box-label">Strong Desire for Control</div><p>Stories are owned at the whānau level — control stays with family, not a machine or organisation.</p></div>
+        <div class="story-box"><div class="box-label">Openness — With Conditions</div><p>Some were comfortable in principle if they had contributed directly to what was captured.</p></div>
+        <div class="story-box"><div class="box-label">Fear of Distortion</div><p>Different whānau hold different versions of the same person. Present multiple perspectives rather than flattening them.</p></div>
+        <div class="story-box"><div class="box-label">Scepticism About Authenticity</div><p>AI can archive stories — but cannot replace a person telling their story at a tangi, in the moment.</p></div>
+        <div class="story-box"><div class="box-label">Multiple Truths as Valid</div><p>"That's quite a Western construct — we always talk about there being multiple truths." AI's drive toward singular outputs conflicts with this worldview.</p></div>
+        <div class="story-box"><div class="box-label">Generational Perspective</div><p>What feels uncomfortable now, future generations may consider completely normal. The real question is what our mokopuna will think is ordinary.</p></div>
       </div>
-      <div class="story-quote-small" style="max-width:700px;border-left-width:3px;padding-left:2rem">
-        <p style="font-size:clamp(1.4rem,2.5vw,2rem);line-height:1.3">"The stories are still there, still correct and still precious. I'm not feared of AI anymore."</p>
-        <cite style="margin-top:1rem;display:block">— Francie Diver, interview 2025</cite>
+      <div class="story-quote-large">
+        <p>"The stories are still there, still correct and still precious. I'm not feared of AI anymore."</p>
+        <cite>— Francie Diver, interview 2025</cite>
       </div>
     </div>
   </div>
@@ -855,36 +773,32 @@
 <section class="comparison-section" id="s-comparison" data-label="Two Lenses">
   <div class="c">
     <div class="eyebrow fi">Findings · Chapter Four</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;">Two Lenses,<br><em style="font-style:italic;">Same Conclusion</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-top:1rem;">Where expert knowledge and lived experience converge and diverge — and what that tells us about the depth of the findings.</p>
+    <h2 class="fi section-title">Two Lenses,<br><em style="font-style:italic">Same Conclusion</em></h2>
+    <p class="fi section-intro">Expert knowledge and lived experience arrived at identical values through very different language.</p>
   </div>
-
-  <div class="comparison-cols fi" style="margin-top:4rem">
+  <div class="comparison-cols fi">
     <div class="comp-col interviews">
-      <span class="comp-col-label">Method One</span>
-      <h3>Interviews<br>Expert Knowledge</h3>
-      <p>Used governance frameworks and formal language to describe cultural taxation as systemic failure. Named specific frameworks — CARE principles, noa/tapu/rāhui — and framed AI risk in terms of structural power and legislative gaps.</p>
+      <span class="comp-col-label">Interviews — Expert Knowledge</span>
+      <h3>Frameworks &amp;<br>Formal Language</h3>
+      <p>Named CARE principles, noa/tapu/rāhui, and legislative frameworks. Described cultural taxation as systemic failure.</p>
     </div>
     <div class="comp-col survey">
-      <span class="comp-col-label">Method Two</span>
-      <h3>Survey<br>Lived Experience</h3>
-      <p>Described cultural integrity in terms of ownership and feeling — even without using governance terminology. Spoke from personal experience of reconnection, fear of loss, and hope for what AI could enable if it were done right.</p>
+      <span class="comp-col-label">Survey — Lived Experience</span>
+      <h3>Ownership &amp;<br>Personal Feeling</h3>
+      <p>Spoke from reconnection, fear of loss, and hope — without governance terminology, but arriving at the same conclusions.</p>
     </div>
   </div>
-
   <div class="c">
-    <div class="converge-section fi">
-      <div class="eyebrow" style="margin-top:3rem">Where They Converge</div>
+    <div class="fi" style="margin-top:3rem">
+      <div class="eyebrow">Where They Converge</div>
       <div class="converge-grid">
-        <div class="converge-item"><p>Both framed AI as simultaneously risk AND opportunity — disengagement is the greater danger</p></div>
-        <div class="converge-item"><p>Both associated AI risk with who controls the data, not with the technology itself</p></div>
-        <div class="converge-item"><p>Both emphasised co-design as structurally essential — not optional best practice</p></div>
-        <div class="converge-item"><p>Both wanted Māori at the table, not just consulted after decisions had already been made</p></div>
-        <div class="converge-item"><p>Both described cultural taxation as a real and documented harm — regardless of whether they used that term</p></div>
-        <div class="converge-item"><p>Both centred community ownership as the foundation of any trustworthy AI system</p></div>
+        <div class="converge-item"><p>AI is simultaneously risk AND opportunity — disengagement is the greater danger</p></div>
+        <div class="converge-item"><p>Risk lies with who controls the data, not with the technology itself</p></div>
+        <div class="converge-item"><p>Co-design is structurally essential — not optional best practice</p></div>
+        <div class="converge-item"><p>Māori must be at the table, not consulted after decisions are made</p></div>
       </div>
       <div class="diverge-note">
-        <p><strong>The language was different. The values were identical.</strong> Experts used technical governance language and named specific frameworks. Survey respondents spoke from lived experience and emotion — but arrived at the same conclusions. This convergence across two very different groups strengthens the validity of every theme in this research.</p>
+        <p><strong>The language was different. The values were identical.</strong> This convergence across two very different groups strengthens the validity of every theme in this research.</p>
       </div>
     </div>
   </div>
@@ -895,7 +809,7 @@
   <div class="tensions-head fi">
     <div class="eyebrow">Findings · Thematic Analysis</div>
     <h2>Ethical<br><em style="font-style:italic">Tensions</em></h2>
-    <p style="margin-top:1rem">Five genuine dilemmas — not problems to solve, but competing values that communities must hold in balance.</p>
+    <p style="margin-top:.8rem">Five competing values that communities must hold in balance — not problems to solve.</p>
   </div>
   <div class="tensions-grid fi">
     <div class="tr"><div class="tr-side l">Speed &amp; Efficiency</div><div class="tr-vs">vs</div><div class="tr-side r">Tikanga &amp; Cultural Process</div></div>
@@ -904,93 +818,22 @@
     <div class="tr"><div class="tr-side l">Convenience</div><div class="tr-vs">vs</div><div class="tr-side r">Sovereignty &amp; Community Control</div></div>
     <div class="tr"><div class="tr-side l">Innovation &amp; Progress</div><div class="tr-vs">vs</div><div class="tr-side r">Protection of Sacred Knowledge</div></div>
   </div>
-  <div class="tensions-foot">
-    <p class="tensions-note fi">These tensions sit beneath the five themes as the live dilemmas participants navigate every time AI intersects with Māori language or storytelling. There is no resolution that eliminates the tension — only governance that holds it with integrity.</p>
-  </div>
+  <div class="tensions-foot"></div>
 </section>
 
 <!-- TRUST CONDITIONS -->
 <section class="trust-section" id="s-trust" data-label="Trust Conditions">
   <div class="c">
     <div class="eyebrow fi">From the Research · Community Voice</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;">Community Conditions<br><em style="font-style:italic">for Trust</em></h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-top:1rem">Trust in AI is not automatic, and it is not unconditional. These six conditions emerged as the minimum requirements communities need before genuinely trusting AI with their language and stories.</p>
+    <h2 class="fi section-title">Community Conditions<br><em style="font-style:italic">for Trust</em></h2>
+    <p class="fi section-intro">Six minimum requirements before communities can genuinely trust AI with their language and stories.</p>
     <div class="trust-grid">
-      <div class="trust-card fi"><h4>Accuracy Must Be Near-Perfect</h4><p>AI working with te reo Māori cannot afford to be approximately right. Cultural and linguistic errors carry real harm — misrepresenting meaning, whakapapa, or tikanga in ways that may not be immediately visible.</p></div>
-      <div class="trust-card fi"><h4>Māori Control</h4><p>Communities must hold genuine decision-making authority — not advisory roles. Control over what data is used, how it is stored, who can access it, and when the system can be shut down or changed.</p></div>
-      <div class="trust-card fi"><h4>Transparency</h4><p>Communities need to understand how AI systems work with their data — in plain language, not technical terms. Opacity is incompatible with trust, especially given histories of extraction and misrepresentation.</p></div>
-      <div class="trust-card fi"><h4>Safety from Harm</h4><p>Systems must actively prevent misuse — including deepfakes using Māori faces or voices, fake Māori identities, and the weaponisation of cultural signals for manipulation or exploitation.</p></div>
-      <div class="trust-card fi"><h4>Intergenerational Protection</h4><p>Whatever is built must consider not just present use, but what future generations will inherit. Stories, data, and language entered into AI systems today will shape what mokopuna encounter tomorrow.</p></div>
-      <div class="trust-card fi"><h4>Consent &amp; Regular Review</h4><p>Consent must be ongoing and contextual — not a one-time sign-off. Systems should be reviewed regularly (every 3–12 months) with communities retaining the right to withdraw consent at any point.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE YOU USE AI -->
-<section class="beforeai-section" id="s-before-ai" data-label="Before You Use AI">
-  <div class="c">
-    <div class="eyebrow fi">Practical Guidance · From the Research</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;margin-bottom:1rem">Before You Use AI</h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-bottom:3rem">AI tools are already being used for te reo Māori — for translation, pronunciation, whakapapa research, and reconnection. Many people using them don't fully understand how they work, what happens to their data, or where the outputs are coming from. That's not a personal failing. It's a structural one. But it matters — because the risks aren't future risks. They're happening now.</p>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-bottom:4rem">These questions are for anyone using AI to engage with te reo Māori or Māori cultural knowledge — whether you're reconnecting with your language, working in an organisation, or just trying to get a translation right.</p>
-
-    <div class="bai-grid fi">
-      <div class="bai-card">
-        <span class="bai-q-label">Question 1</span>
-        <h4>Do you know what the tool is actually doing with your input?</h4>
-        <p>When you type te reo Māori into an AI tool — or ask it to translate something — that input may be stored, used to improve the model, and processed in ways you haven't consented to. Many widely used AI tools were trained on data scraped from the internet, including Māori language content collected without community knowledge or approval.</p>
-        <p class="bai-ask"><strong>Ask yourself:</strong> Does this tool have a clear data policy? Does it store my inputs? Was it trained with Māori community consent?</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 2</span>
-        <h4>Is the output actually correct — or just confident?</h4>
-        <p>AI tools sound certain even when they're wrong. Research in Aotearoa has found that AI-generated te reo Māori can appear accurate while being culturally off — mistranslating concepts, assigning gender where none exists in the language, or stripping whakapapa and tikanga from terms that can't be separated from them.</p>
-        <p>The real danger for those reconnecting with their language: a mistranslation doesn't just mislead you — it can fill gaps left by colonisation with something that feels right but isn't grounded in anything real.</p>
-        <p class="bai-ask"><strong>Ask yourself:</strong> Have I validated this output with a fluent speaker or a trusted Māori language resource? Am I treating AI as a starting point or a final answer?</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 3</span>
-        <h4>Is what you're sharing noa, tapu, or rāhui?</h4>
-        <p>Not all Māori data is the same. Before sharing anything with an AI system, consider which category it falls into:</p>
-        <ul>
-          <li><strong>Noa</strong> — publicly available, can generally be used with care</li>
-          <li><strong>Tapu</strong> — sensitive cultural content that requires proper authority and should not leave Aotearoa</li>
-          <li><strong>Rāhui</strong> — sacred knowledge (whakapapa, medicines, knowledge held within specific families) that should never be digitised or shared with AI systems</li>
-        </ul>
-        <p class="bai-ask">If you're unsure which category something falls into, that uncertainty is itself a signal to pause before sharing.</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 4</span>
-        <h4>Are you using AI as a bridge — or letting it become the destination?</h4>
-        <p>AI can be a useful pathway for people reconnecting with te reo Māori — it can make the language more accessible and reduce the barrier of not knowing where to begin. That's real, and it matters.</p>
-        <p>But the research is clear: AI cannot replace the warmth and context of a person, a class, a marae, or a kaumātua. If AI is helping you get to those things, that's the technology working well. If it's becoming a substitute for them, that's worth questioning.</p>
-        <div class="bai-quote-block">
-          <p>"The technology can help, but it will never replace that feeling of connection."</p>
-          <cite>— Smith, interview 2025</cite>
-        </div>
-      </div>
-    </div>
-
-    <div class="bai-card fi" style="margin-top:2rem">
-      <span class="bai-q-label">Question 5</span>
-      <h4>Are you informed enough to push back if something feels wrong?</h4>
-      <p style="font-size:.9rem;color:var(--ink2);line-height:1.8;max-width:72ch;margin-bottom:1rem">AI literacy is the foundation of meaningful engagement. You don't need to be a technologist — but you do need enough understanding to notice when something doesn't feel right, to question outputs, and to make decisions about what you share and what you don't.</p>
-      <p style="font-size:.9rem;color:var(--ink2);line-height:1.8;max-width:72ch;margin-bottom:1.5rem">Disengaging from AI entirely isn't a safe option — these systems will shape how te reo Māori is encountered and represented whether or not you're involved. But uninformed participation carries its own risks. The most important thing is to engage with your eyes open.</p>
-      <div class="bai-quote-block">
-        <p>"We're at a crossroads. We can either say, no, AI is bad, let's ignore it, and then we will be recolonised, but in a way that no one can comprehend right now… the risk is if we don't actually grasp it now."</p>
-        <cite>— Karaitiana Taiuru, interview 2025</cite>
-      </div>
-    </div>
-
-    <div class="fi" style="margin-top:4rem;padding-top:3rem;border-top:1px solid var(--hair)">
-      <h4 style="font-family:var(--f-disp);font-size:1.4rem;margin-bottom:1.5rem">Where to go instead of (or alongside) AI</h4>
-      <p style="font-size:.9rem;color:var(--ink2);line-height:1.8;max-width:62ch;margin-bottom:1.5rem">If you're reconnecting with te reo Māori, these are places built with community authority and cultural grounding:</p>
-      <ul style="font-size:.9rem;color:var(--ink2);line-height:2;padding-left:1.25rem">
-        <li><strong>Te Aka Māori Dictionary</strong> — <a href="https://te-aka.maori.nz" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">te-aka.maori.nz</a> — the most trusted reference for te reo Māori</li>
-        <li><strong>Kōrero Māori</strong> — <a href="https://korero.maori.nz" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">korero.maori.nz</a> — language learning with cultural context</li>
-        <li><strong>Kahu Code</strong> — <a href="https://kahuco.de" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">kahuco.de</a> — Māori-owned AI translation built with community oversight</li>
-        <li><strong>Te Taura Whiri i te Reo Māori</strong> — <a href="https://tetaurawhiri.govt.nz" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">tetaurawhiri.govt.nz</a> — the Māori Language Commission</li>
-      </ul>
+      <div class="trust-card fi"><h4>Accuracy Must Be Near-Perfect</h4><p>Cultural and linguistic errors carry real harm — misrepresenting whakapapa or tikanga in ways that may not be immediately visible.</p></div>
+      <div class="trust-card fi"><h4>Māori Control</h4><p>Genuine decision-making authority — not advisory roles. Control over data, access, and the ability to shut the system down.</p></div>
+      <div class="trust-card fi"><h4>Transparency</h4><p>Communities need to understand how AI works with their data — in plain language. Opacity is incompatible with trust.</p></div>
+      <div class="trust-card fi"><h4>Safety from Harm</h4><p>Active prevention of misuse — deepfakes, fake Māori identities, and the weaponisation of cultural signals.</p></div>
+      <div class="trust-card fi"><h4>Intergenerational Protection</h4><p>Whatever is built must consider what future generations will inherit — not just present use.</p></div>
+      <div class="trust-card fi"><h4>Consent &amp; Regular Review</h4><p>Ongoing, contextual consent — not a one-time sign-off. Communities retain the right to withdraw at any point.</p></div>
     </div>
   </div>
 </section>
@@ -999,8 +842,8 @@
 <section class="recs-section" id="s-recommendations" data-label="Recommendations">
   <div class="c">
     <div class="eyebrow fi">Chapter Seven</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;margin-bottom:.5rem">Recommendations</h2>
-    <p class="fi" style="font-size:1rem;color:var(--ink2);line-height:1.85;max-width:62ch;margin-bottom:3rem">Practical actions, not high-level aspirations. They come directly from what participants shared and connect back to the research findings.</p>
+    <h2 class="fi section-title">Recommendations</h2>
+    <p class="fi section-intro">Practical actions, not high-level aspirations — drawn directly from what participants shared.</p>
     <div class="recs-tabs fi">
       <div class="rec-tab active" onclick="showTab('orgs',this)">For Organisations</div>
       <div class="rec-tab" onclick="showTab('govt',this)">For Government</div>
@@ -1010,69 +853,86 @@
     <div style="max-width:900px">
       <div class="rec-panel active" id="tab-orgs">
         <div class="rec-list">
-          <div class="rec-item"><div class="rec-n">1</div><p><strong>Implement noa/tapu/rāhui data classification</strong> before any AI development or procurement begins. The default stance must be: Māori data belongs to the community unless explicit, informed consent for a specific use has been given.</p></div>
-          <div class="rec-item"><div class="rec-n">2</div><p><strong>Involve Māori governance from the design stage</strong> — not the review stage. Co-design from day one is the only model consistently associated with outcomes that work and communities that trust the process.</p></div>
-          <div class="rec-item"><div class="rec-n">3</div><p><strong>Establish governance with genuine decision-making authority</strong> — not advisory-only roles. Require AI expertise + te reo/tikanga knowledge + Te Tiriti understanding held collectively.</p></div>
-          <div class="rec-item"><div class="rec-n">4</div><p><strong>Stop relying on cultural taxation.</strong> Fund dedicated roles and compensate external expertise appropriately. Expecting one Māori staff member to carry all cultural responsibility is not governance — and it causes harm.</p></div>
-          <div class="rec-item"><div class="rec-n">5</div><p><strong>Make values alignment with te ao Māori explicit</strong> before engagement begins. Mapping existing organisational values alongside manaakitanga and kaitiakitanga shifts engagement from performative to genuinely grounded.</p></div>
+          <div class="rec-item"><div class="rec-n">1</div><p><strong>Apply noa/tapu/rāhui classification</strong> before any AI development begins. Default: Māori data belongs to the community unless explicit consent is given.</p></div>
+          <div class="rec-item"><div class="rec-n">2</div><p><strong>Bring Māori governance in at the design stage,</strong> not the review stage. Co-design from day one is the only model with reliable outcomes.</p></div>
+          <div class="rec-item"><div class="rec-n">3</div><p><strong>Build governance with real authority</strong> — not advisory roles. Require AI expertise + te reo/tikanga knowledge + Te Tiriti understanding, held collectively.</p></div>
+          <div class="rec-item"><div class="rec-n">4</div><p><strong>Stop relying on cultural taxation.</strong> Expecting one Māori staff member to carry all cultural responsibility is not governance — fund dedicated roles.</p></div>
+          <div class="rec-item"><div class="rec-n">5</div><p><strong>Make values alignment explicit</strong> before engagement begins. Map existing values alongside manaakitanga and kaitiakitanga.</p></div>
         </div>
       </div>
       <div class="rec-panel" id="tab-govt">
         <div class="rec-list">
-          <div class="rec-item"><div class="rec-n">1</div><p><strong>Mandate Te Tiriti o Waitangi obligations</strong> in all AI procurement and policy frameworks — not as an add-on, but as a non-negotiable foundation. New Zealand is also a UNDRIP signatory.</p></div>
-          <div class="rec-item"><div class="rec-n">2</div><p><strong>Fund dedicated Māori AI roles and Māori-led governance initiatives.</strong> Stop expecting existing staff to absorb cultural responsibility as an unofficial duty. This is an investment, not a cost.</p></div>
-          <div class="rec-item"><div class="rec-n">3</div><p><strong>Stop counting consultation as participation.</strong> Genuine co-design requires decision-making authority — not just being heard. The Algorithm Charter demonstrated the consequences of voluntarism at scale.</p></div>
-          <div class="rec-item"><div class="rec-n">4</div><p><strong>Address the double digital divide</strong> as a precondition for meaningful participation. Investment in digital equity and AI literacy for Māori communities is what makes everything else possible.</p></div>
-          <div class="rec-item"><div class="rec-n">5</div><p><strong>Commission longitudinal research</strong> tracking Māori AI initiatives over 5–10 years to shift the evidence base from assumptions to outcomes.</p></div>
+          <div class="rec-item"><div class="rec-n">1</div><p><strong>Mandate Te Tiriti obligations</strong> in all AI procurement and policy — not as an add-on, but as a non-negotiable foundation.</p></div>
+          <div class="rec-item"><div class="rec-n">2</div><p><strong>Fund dedicated Māori AI roles</strong> and Māori-led governance initiatives. Stop expecting existing staff to absorb cultural responsibility.</p></div>
+          <div class="rec-item"><div class="rec-n">3</div><p><strong>Stop counting consultation as participation.</strong> Genuine co-design requires decision-making authority.</p></div>
+          <div class="rec-item"><div class="rec-n">4</div><p><strong>Address the double digital divide</strong> — investment in AI literacy for Māori communities is what makes everything else possible.</p></div>
+          <div class="rec-item"><div class="rec-n">5</div><p><strong>Develop specific policy for generative AI and mātauranga Māori,</strong> developed in genuine partnership with Māori experts.</p></div>
         </div>
       </div>
       <div class="rec-panel" id="tab-maori">
         <div class="rec-list">
-          <div class="rec-item"><div class="rec-n">1</div><p><strong>Claim your data sovereignty</strong> — not as a preference or a request, but as a right. The frameworks are established. The authority is yours. Free, prior, and informed consent includes the right to withhold consent.</p></div>
-          <div class="rec-item"><div class="rec-n">2</div><p><strong>Build internal capability.</strong> Rangatahi Māori in AI and tech are not a nice-to-have — they are the long-term safeguard for digital sovereignty.</p></div>
-          <div class="rec-item"><div class="rec-n">3</div><p><strong>Engage with AI from a position of authority,</strong> not as a last-minute reviewer. Shape the tools that will shape your communities. Co-design from day one.</p></div>
-          <div class="rec-item"><div class="rec-n">4</div><p><strong>Trust the knowledge holders as the ultimate governance authority.</strong> The most important resource is not a framework — it is the people who carry true stories, accurate whakapapa, and tikanga held through generations.</p></div>
-          <div class="rec-item"><div class="rec-n">5</div><p><strong>Build stronger connections across the Māori AI ecosystem.</strong> The guidance already exists in your own knowledge systems. The diversity of iwi and hapū approaches is a strength — most powerful when connected through shared learning.</p></div>
+          <div class="rec-item"><div class="rec-n">1</div><p><strong>Claim data sovereignty</strong> — not as a preference, but as a right. Free, prior, and informed consent includes the right to withhold.</p></div>
+          <div class="rec-item"><div class="rec-n">2</div><p><strong>Build internal capability.</strong> Rangatahi Māori in AI and tech are the long-term safeguard for digital sovereignty.</p></div>
+          <div class="rec-item"><div class="rec-n">3</div><p><strong>Engage from a position of authority,</strong> not as a last-minute reviewer. Shape the tools that will shape your communities.</p></div>
+          <div class="rec-item"><div class="rec-n">4</div><p><strong>Trust the knowledge holders</strong> as the ultimate governance authority — tikanga is the framework.</p></div>
         </div>
       </div>
       <div class="rec-panel" id="tab-reo">
         <div class="rec-list">
-          <div class="rec-item"><div class="rec-n">1</div><p><strong>Understand that te reo is not a translation task</strong> — it is a worldview. The language carries whakapapa, relationships, and spiritual meaning that cannot transfer word-for-word from English.</p></div>
-          <div class="rec-item"><div class="rec-n">2</div><p><strong>Never use AI-generated te reo without validation</strong> by fluent speakers or language experts. AI can appear correct while being culturally wrong. Validation from the start — not at the end.</p></div>
-          <div class="rec-item"><div class="rec-n">3</div><p><strong>Collaborate with the right people and resource them properly.</strong> Involving cultural expertise without fair compensation is extraction, even when well-intentioned.</p></div>
-          <div class="rec-item"><div class="rec-n">4</div><p><strong>Be honest about the difference between using te reo and respecting it.</strong> Tokenistic use causes real harm — to the language, to the communities whose taonga it is, and to the organisation's credibility.</p></div>
+          <div class="rec-item"><div class="rec-n">1</div><p><strong>Te reo is not a translation task</strong> — it is a worldview. It carries whakapapa and spiritual meaning that cannot transfer word-for-word.</p></div>
+          <div class="rec-item"><div class="rec-n">2</div><p><strong>Never use AI-generated te reo without validation</strong> by fluent speakers. AI can appear correct while being culturally wrong.</p></div>
+          <div class="rec-item"><div class="rec-n">3</div><p><strong>Resource cultural expertise properly.</strong> Involving experts without fair compensation is extraction, even when well-intentioned.</p></div>
+          <div class="rec-item"><div class="rec-n">4</div><p><strong>Be honest about the difference</strong> between using te reo and respecting it. Tokenistic use causes real harm.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT DOES SUCCESS LOOK LIKE -->
-<section class="success-section" id="s-success" data-label="Success in 10 Years">
+<!-- BEFORE YOU USE AI -->
+<section class="beforeai-section" id="s-before-ai" data-label="Before You Use AI">
   <div class="c">
-    <div class="success-eyebrow fi">Looking Forward · Chapter Seven</div>
-    <h2 class="fi" style="font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em;color:var(--bg);">What Does Success<br><em style="font-style:italic">Look Like?</em></h2>
-    <p class="success-opening fi">AI that amplifies Māori voices — with Māori in control of what it says, what it learns, and whose stories it tells. A 10-year vision from the research.</p>
-    <div class="success-grid fi">
-      <div class="success-card">
-        <span class="success-card-n">Vision 01</span>
-        <h4>Stories Stay Sovereign</h4>
-        <p>AI amplifies — communities author. Tools that support storytelling without replacing the storyteller. Whakapapa transmitted accurately, with the right people in control of access. The distinction between AI as guardian and AI as author is fully understood and enforced.</p>
+    <div class="eyebrow fi">Practical Guidance · From the Research</div>
+    <h2 class="fi section-title">Before You Use AI</h2>
+    <p class="fi section-intro">For anyone using AI to engage with te reo Māori or Māori cultural knowledge — whether reconnecting with language, working in an organisation, or getting a translation.</p>
+
+    <div class="bai-grid fi" style="margin-top:3rem">
+      <div class="bai-card">
+        <span class="bai-q-label">Question 1</span>
+        <h4>Do you know what the tool is doing with your input?</h4>
+        <p>Your input may be stored and used to improve the model. Many AI tools were trained on Māori language content collected without community knowledge or consent.</p>
+        <p class="bai-ask"><strong>Ask:</strong> Does this tool have a clear data policy? Was it trained with Māori community consent?</p>
       </div>
-      <div class="success-card">
-        <span class="success-card-n">Vision 02</span>
-        <h4>Te Reo Thrives</h4>
-        <p>AI tools that support genuine immersion and revitalisation. Learners access accurate, culturally grounded resources. The 1M speaker goal of 2040 is supported — not undermined — by technology. Wānanga offering AI training, rangatahi leading in AI careers.</p>
+      <div class="bai-card">
+        <span class="bai-q-label">Question 2</span>
+        <h4>Is the output correct — or just confident?</h4>
+        <p>AI sounds certain even when it's wrong. For those reconnecting with their language, a mistranslation can fill gaps left by colonisation with something that feels right but isn't real.</p>
+        <p class="bai-ask"><strong>Ask:</strong> Have I validated this with a fluent speaker? Am I treating AI as a starting point or a final answer?</p>
       </div>
-      <div class="success-card">
-        <span class="success-card-n">Vision 03</span>
-        <h4>Governance Has Real Teeth</h4>
-        <p>Iwi and communities hold genuine decision-making authority. Noa/tapu/rāhui is standard practice. Cultural taxation is obsolete because dedicated roles and resourcing exist. Copyright Act, Privacy Act, and digital harm laws are updated to protect mātauranga Māori.</p>
+      <div class="bai-card">
+        <span class="bai-q-label">Question 3</span>
+        <h4>Is what you're sharing noa, tapu, or rāhui?</h4>
+        <p>Not all Māori data is the same. <strong>Noa</strong> — publicly available. <strong>Tapu</strong> — sensitive, requires authority. <strong>Rāhui</strong> — sacred, must never be digitised or shared with AI systems.</p>
+        <p class="bai-ask">If you're unsure which category something falls into, that uncertainty is a signal to pause.</p>
       </div>
-      <div class="success-card">
-        <span class="success-card-n">Vision 04</span>
-        <h4>Aotearoa Leads Globally</h4>
-        <p>A replicable model for Indigenous AI governance that other nations look to. Comparative research across Canada, Australia, Brazil and Aotearoa informs global Indigenous data sovereignty frameworks. Not one sovereign Indigenous AI — multiple, owned 100% by communities.</p>
+      <div class="bai-card">
+        <span class="bai-q-label">Question 4</span>
+        <h4>Are you using AI as a bridge — or letting it become the destination?</h4>
+        <p>AI can make te reo more accessible. But it cannot replace the warmth of a person, a marae, or a kaumātua. If it's helping you get there, it's working. If it's replacing those things, that's worth questioning.</p>
+        <div class="bai-quote-block">
+          <p>"The technology can help, but it will never replace that feeling of connection."</p>
+          <cite>— Smith, interview 2025</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="bai-card fi" style="margin-top:1.5rem">
+      <span class="bai-q-label">Question 5</span>
+      <h4>Are you informed enough to push back if something feels wrong?</h4>
+      <p style="font-size:.88rem;color:var(--ink2);line-height:1.78;max-width:72ch">You don't need to be a technologist — but you need enough understanding to notice when something doesn't feel right, and to make decisions about what you share.</p>
+      <div class="bai-quote-block">
+        <p>"We're at a crossroads. If we don't grasp it now, we will be recolonised — but in a way that no one can comprehend right now."</p>
+        <cite>— Karaitiana Taiuru, interview 2025</cite>
       </div>
     </div>
   </div>
@@ -1084,13 +944,11 @@
   <div class="closing-inner">
     <div class="eyebrow fi">Closing Reflection</div>
     <h2 class="closing-title fi">Eyes Wide Open</h2>
-    <p class="fi">This research confirms that the crossroads is real. The window for Māori agency is open — but it will not stay open forever. What is clear is that we already know what good looks like. Tikanga-based governance, community-led design, data sovereignty, and collective decision-making are not new ideas. They exist. They are already being practised.</p>
-    <p class="fi">I did not start this research with all the answers. I started it because something did not feel right. I could see language and data being treated as something to extract, process, and commercialise — without any real understanding of what sits behind it.</p>
+    <p class="fi">The crossroads is real. The window for Māori agency is open — but it will not stay open forever. We already know what good looks like. What is needed now is not more discussion. It is action.</p>
     <div class="closing-big fi">
       "Make it ours, not be led by an artificial God. Eyes wide open, always wide open."
       <cite>— Francie Diver, interview 2025</cite>
     </div>
-    <p class="fi">What is needed now is not more discussion about what good looks like. We already know. What is needed is action — structure, resourcing, governance, and accountability. A shift from intention to implementation.</p>
     <p class="closing-maori fi">Ko au te awa, ko te awa ko au.</p>
   </div>
 </section>
@@ -1122,7 +980,7 @@
 
   const sections = [...document.querySelectorAll('[data-label]')];
   const dotsEl = document.getElementById('dots');
-  sections.forEach((s) => {
+  sections.forEach(s => {
     const d = document.createElement('div');
     d.className = 'section-dot';
     d.title = s.dataset.label;
