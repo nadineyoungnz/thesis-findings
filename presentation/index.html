@@ -92,20 +92,6 @@
   .history-callout h4{font-family:var(--f-disp);font-size:1.05rem;color:var(--ink);margin-bottom:.6rem}
   .history-callout p{font-size:.85rem;color:var(--ink2);line-height:1.75;max-width:100%}
 
-  /* AI RISK */
-  .airisk-section{background:var(--bg);padding:7rem 0}
-  .airisk-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:4rem;align-items:start}
-  .airisk-block h3{font-family:var(--f-disp);font-size:1.4rem;color:var(--ink);margin-bottom:1.2rem}
-  .framework-item{padding:1rem 0;border-bottom:1px solid var(--hair)}
-  .framework-item:first-of-type{border-top:1px solid var(--hair)}
-  .fw-name{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:3px}
-  .fw-desc{font-size:.88rem;color:var(--ink2);line-height:1.7}
-  .country-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .country-item{background:var(--bg2);border:1px solid var(--hair);padding:1.1rem 1.3rem}
-  .country-flag{font-size:1rem;margin-bottom:3px;display:block}
-  .country-name-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
-  .country-desc{font-size:.82rem;color:var(--ink2);line-height:1.65}
-
   /* METHODOLOGY */
   .method-section{background:var(--bg2);padding:7rem 0}
   .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:4rem;align-items:start}
@@ -125,18 +111,6 @@
   .participant-type{background:var(--bg);border:1px solid var(--hair);padding:.9rem 1.3rem}
   .pt-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;display:block}
   .participant-type p{font-size:.85rem;color:var(--ink2);line-height:1.6;margin:0}
-
-  /* FRAMEWORKS */
-  .frameworks-section{background:var(--bg);padding:7rem 0}
-  .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3.5rem}
-  .fw-card{background:var(--bg2);display:flex;flex-direction:column}
-  .fw-head{background:var(--ink);padding:1.6rem 2.2rem}
-  .fw-head h3{font-family:var(--f-disp);font-size:1.8rem;color:var(--bg);margin-bottom:4px}
-  .fw-head .fw-sub{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,230,218,.4)}
-  .fw-body{padding:1.8rem 2rem}
-  .fw-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-  .fw-list li{display:flex;gap:12px;font-size:.87rem;color:var(--ink);line-height:1.6}
-  .fw-list li::before{content:'—';color:var(--hair);flex-shrink:0}
 
   /* RESEARCH QUESTION */
   .rq-section{background:var(--bg2);padding:7rem 0}
@@ -190,67 +164,6 @@
   .story-quote-large p{font-family:var(--f-disp);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--ink);line-height:1.3}
   .story-quote-large cite{font-family:var(--f-mono);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.8rem}
 
-  /* INTERVIEWS VS SURVEY */
-  .comparison-section{background:var(--bg2);padding:7rem 0}
-  .comparison-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--hair);margin-top:4rem}
-  .comp-col{padding:2.5rem}
-  .comp-col.interviews{background:var(--ink)}
-  .comp-col.survey{background:var(--bg)}
-  .comp-col-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.8rem;display:block}
-  .comp-col.interviews .comp-col-label{color:rgba(239,230,218,.35)}
-  .comp-col.survey .comp-col-label{color:var(--muted)}
-  .comp-col h3{font-family:var(--f-disp);font-size:1.4rem;margin-bottom:.8rem;line-height:1.1}
-  .comp-col.interviews h3{color:var(--bg)}
-  .comp-col.survey h3{color:var(--ink)}
-  .comp-col p{font-size:.88rem;line-height:1.8}
-  .comp-col.interviews p{color:rgba(239,230,218,.6)}
-  .comp-col.survey p{color:var(--ink2)}
-  .converge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);margin-top:2rem}
-  .converge-item{background:var(--bg);padding:1.2rem 1.6rem;display:flex;gap:1rem;align-items:flex-start}
-  .converge-item::before{content:'—';color:var(--accent);font-family:var(--f-mono);flex-shrink:0;margin-top:1px}
-  .converge-item p{font-size:.86rem;color:var(--ink2);line-height:1.7;margin:0}
-  .diverge-note{background:var(--ink);padding:2rem 2.4rem;margin-top:2rem}
-  .diverge-note p{font-size:.92rem;color:rgba(239,230,218,.65);line-height:1.8}
-  .diverge-note strong{color:var(--bg)}
-
-  /* TENSIONS */
-  .tensions-section{background:var(--ink)}
-  .tensions-head{padding:7rem 40px 3.5rem;max-width:1440px;margin:0 auto}
-  .tensions-head .eyebrow{color:rgba(239,230,218,.3)}
-  .tensions-head .eyebrow::before{background:rgba(239,230,218,.2)}
-  .tensions-head h2{font-family:var(--f-disp);font-size:clamp(2rem,4vw,3.5rem);color:var(--bg);letter-spacing:-.02em;margin-bottom:.8rem}
-  .tensions-head p{font-size:.92rem;color:rgba(239,230,218,.45);max-width:52ch;line-height:1.75}
-  .tensions-grid{border-top:1px solid rgba(239,230,218,.06)}
-  .tr{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;border-bottom:1px solid rgba(239,230,218,.06);padding:2rem clamp(40px,8vw,140px);transition:background .2s}
-  .tr:hover{background:rgba(239,230,218,.025)}
-  .tr-side{font-family:var(--f-disp);font-size:clamp(1.3rem,2.2vw,2.2rem);line-height:1.15;transition:color .2s}
-  .tr-side.l{text-align:right;color:rgba(239,230,218,.85);font-style:italic}
-  .tr:hover .tr-side.l{color:var(--bg)}
-  .tr-side.r{color:rgba(239,230,218,.3)}
-  .tr:hover .tr-side.r{color:rgba(239,230,218,.6)}
-  .tr-vs{text-align:center;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,230,218,.22)}
-  .tensions-foot{padding:2.5rem clamp(40px,8vw,140px) 5rem}
-
-  /* TRUST */
-  .trust-section{background:var(--bg);padding:7rem 0}
-  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-  .trust-card{background:var(--bg2);border:1px solid var(--hair);padding:2rem;border-top:3px solid var(--ink)}
-  .trust-card h4{font-family:var(--f-disp);font-size:1.15rem;color:var(--ink);margin-bottom:.6rem;line-height:1.2}
-  .trust-card p{font-size:.85rem;color:var(--ink2);line-height:1.75}
-
-  /* BEFORE YOU USE AI */
-  .beforeai-section{background:var(--bg2);padding:7rem 0}
-  .bai-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-  .bai-card{background:var(--bg);border:1px solid var(--hair);padding:1.8rem 2rem}
-  .bai-q-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:block}
-  .bai-card h4{font-family:var(--f-disp);font-size:1.15rem;margin-bottom:.8rem;line-height:1.25;color:var(--ink)}
-  .bai-card p{font-size:.88rem;color:var(--ink2);line-height:1.78;margin-bottom:.8rem}
-  .bai-card p:last-child{margin-bottom:0}
-  .bai-ask{font-family:var(--f-mono);font-size:.78rem;color:var(--ink);line-height:1.6}
-  .bai-quote-block{border-left:2px solid var(--accent);padding-left:1rem;margin-top:1rem}
-  .bai-quote-block p{font-family:var(--f-disp);font-style:italic;font-size:.95rem;color:var(--ink);line-height:1.5;margin:0}
-  .bai-quote-block cite{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.4rem;display:block}
-
   /* RECS */
   .recs-section{background:var(--bg);padding:7rem 0}
   .recs-tabs{display:flex;gap:0;border-bottom:1px solid var(--hair);margin-bottom:2.5rem;flex-wrap:wrap}
@@ -291,17 +204,16 @@
 
   @media(max-width:1024px){
     .section-dots{display:none}
-    .intro-grid,.rq-grid,.themes-header,.method-grid,.airisk-grid,.comparison-cols,.fw-grid{grid-template-columns:1fr;gap:3rem}
+    .intro-grid,.rq-grid,.themes-header,.method-grid,.comparison-cols,.fw-grid{grid-template-columns:1fr;gap:3rem}
     .triptych,.trust-grid,.history-callouts{grid-template-columns:1fr}
     .timeline{grid-template-columns:1fr;gap:2rem;border-top:none}
     .tl-item{border-left:2px solid var(--hair);padding:0 0 2rem 2rem}
     .tl-item::before{top:4px;left:-7px}
-    .tr{padding:1.8rem 2rem;grid-template-columns:1fr 60px 1fr}
     .footer-inner{flex-direction:column;gap:1.5rem;text-align:center}
     .footer-l{flex-direction:column}
     .closing-section{text-align:left;padding:5rem 28px}
     .closing-inner{margin:0}
-    .converge-grid,.bai-grid,.country-grid,.participants-stats{grid-template-columns:1fr}
+    .participants-stats{grid-template-columns:1fr}
   }
   @media(max-width:720px){
     .c{padding:0 20px}
@@ -436,61 +348,6 @@
   </div>
 </section>
 
-<!-- AI RISK -->
-<section class="airisk-section" id="s-ai-risk" data-label="AI Risk">
-  <div class="c">
-    <div class="eyebrow fi">Literature Review · Chapter Two</div>
-    <h2 class="fi section-title">What the Research<br><em style="font-style:italic">Tells Us</em></h2>
-    <p class="fi section-intro">The governance frameworks already exist. The question is whether they are being applied.</p>
-    <div class="airisk-grid fi">
-      <div class="airisk-block">
-        <h3>Data Sovereignty Frameworks</h3>
-        <div class="framework-item">
-          <span class="fw-name">CARE Principles</span>
-          <p class="fw-desc">Collective benefit, Authority to control, Responsibility, Ethics — the global Indigenous data sovereignty standard.</p>
-        </div>
-        <div class="framework-item">
-          <span class="fw-name">Te Mana Raraunga</span>
-          <p class="fw-desc">Māori Data Sovereignty Network — data must serve the interests of Māori communities and nations.</p>
-        </div>
-        <div class="framework-item">
-          <span class="fw-name">Noa / Tapu / Rāhui</span>
-          <p class="fw-desc">Tikanga-based classification: unrestricted, sacred/restricted, or temporarily embargoed. Not new — tikanga in action.</p>
-        </div>
-        <div class="framework-item">
-          <span class="fw-name">UNDRIP</span>
-          <p class="fw-desc">Indigenous peoples' rights over cultural heritage and data. New Zealand is a signatory — these rights extend into the digital age.</p>
-        </div>
-      </div>
-      <div class="airisk-block">
-        <h3>Global Indigenous AI Context</h3>
-        <div class="country-grid">
-          <div class="country-item">
-            <span class="country-flag">🇧🇷</span>
-            <span class="country-name-label">Brazil</span>
-            <p class="country-desc">Language preservation versus extraction risk — the same tensions, different geography.</p>
-          </div>
-          <div class="country-item">
-            <span class="country-flag">🇨🇦</span>
-            <span class="country-name-label">Canada</span>
-            <p class="country-desc">First Nations AI governance with community veto rights over data use.</p>
-          </div>
-          <div class="country-item">
-            <span class="country-flag">🇦🇺</span>
-            <span class="country-name-label">Australia</span>
-            <p class="country-desc">Aboriginal language AI tools — both successes and cautionary tales.</p>
-          </div>
-          <div class="country-item">
-            <span class="country-flag">🌍</span>
-            <span class="country-name-label">UN Declaration</span>
-            <p class="country-desc">International law provides the framework — it needs enforcement.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- METHODOLOGY -->
 <section class="method-section" id="s-methodology" data-label="Methodology">
   <div class="c">
@@ -544,38 +401,6 @@
             <span class="pt-label">International Indigenous Voice</span>
             <p>An Indigenous researcher from Brazil — comparative global perspective</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FRAMEWORKS -->
-<section class="frameworks-section" id="s-frameworks" data-label="Frameworks">
-  <div class="c">
-    <div class="eyebrow fi">Research Grounding</div>
-    <h2 class="fi section-title">Frameworks That<br><em style="font-style:italic">Guided This Work</em></h2>
-    <div class="fw-grid fi">
-      <div class="fw-card">
-        <div class="fw-head"><h3>Te Ara Tika</h3><div class="fw-sub">Kaupapa Māori Ethical Framework</div></div>
-        <div class="fw-body">
-          <ul class="fw-list">
-            <li><strong>Whakapapa</strong> — Genuine relationships, honouring connection to people, place, and lineage</li>
-            <li><strong>Tika</strong> — Integrity across all aspects of the research</li>
-            <li><strong>Manaakitanga</strong> — Space that values cultural background, where participants can share honestly</li>
-            <li><strong>Mana</strong> — Honouring participants and their words with the respect they deserve</li>
-          </ul>
-        </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-head"><h3>Kaupapa Māori Research</h3><div class="fw-sub">Indigenous Research Methodology</div></div>
-        <div class="fw-body">
-          <ul class="fw-list">
-            <li>Research that <strong>serves</strong> the community it engages with, not just the academy</li>
-            <li>Elevates Māori voices and grounds findings in lived experience</li>
-            <li>Upholds relational accountability — community benefit is prioritised</li>
-            <li>A Māori-first, tikanga-led approach — only Māori can determine appropriate use of their language</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -769,75 +594,6 @@
   </div>
 </section>
 
-<!-- INTERVIEWS VS SURVEY -->
-<section class="comparison-section" id="s-comparison" data-label="Two Lenses">
-  <div class="c">
-    <div class="eyebrow fi">Findings · Chapter Four</div>
-    <h2 class="fi section-title">Two Lenses,<br><em style="font-style:italic">Same Conclusion</em></h2>
-    <p class="fi section-intro">Expert knowledge and lived experience arrived at identical values through very different language.</p>
-  </div>
-  <div class="comparison-cols fi">
-    <div class="comp-col interviews">
-      <span class="comp-col-label">Interviews — Expert Knowledge</span>
-      <h3>Frameworks &amp;<br>Formal Language</h3>
-      <p>Named CARE principles, noa/tapu/rāhui, and legislative frameworks. Described cultural taxation as systemic failure.</p>
-    </div>
-    <div class="comp-col survey">
-      <span class="comp-col-label">Survey — Lived Experience</span>
-      <h3>Ownership &amp;<br>Personal Feeling</h3>
-      <p>Spoke from reconnection, fear of loss, and hope — without governance terminology, but arriving at the same conclusions.</p>
-    </div>
-  </div>
-  <div class="c">
-    <div class="fi" style="margin-top:3rem">
-      <div class="eyebrow">Where They Converge</div>
-      <div class="converge-grid">
-        <div class="converge-item"><p>AI is simultaneously risk AND opportunity — disengagement is the greater danger</p></div>
-        <div class="converge-item"><p>Risk lies with who controls the data, not with the technology itself</p></div>
-        <div class="converge-item"><p>Co-design is structurally essential — not optional best practice</p></div>
-        <div class="converge-item"><p>Māori must be at the table, not consulted after decisions are made</p></div>
-      </div>
-      <div class="diverge-note">
-        <p><strong>The language was different. The values were identical.</strong> This convergence across two very different groups strengthens the validity of every theme in this research.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ETHICAL TENSIONS -->
-<section class="tensions-section" id="s-tensions" data-label="Ethical Tensions">
-  <div class="tensions-head fi">
-    <div class="eyebrow">Findings · Thematic Analysis</div>
-    <h2>Ethical<br><em style="font-style:italic">Tensions</em></h2>
-    <p style="margin-top:.8rem">Five competing values that communities must hold in balance — not problems to solve.</p>
-  </div>
-  <div class="tensions-grid fi">
-    <div class="tr"><div class="tr-side l">Speed &amp; Efficiency</div><div class="tr-vs">vs</div><div class="tr-side r">Tikanga &amp; Cultural Process</div></div>
-    <div class="tr"><div class="tr-side l">Accuracy</div><div class="tr-vs">vs</div><div class="tr-side r">Accessibility &amp; Ease of Use</div></div>
-    <div class="tr"><div class="tr-side l">Reconnection &amp; Opportunity</div><div class="tr-vs">vs</div><div class="tr-side r">Risk of Harm &amp; Distortion</div></div>
-    <div class="tr"><div class="tr-side l">Convenience</div><div class="tr-vs">vs</div><div class="tr-side r">Sovereignty &amp; Community Control</div></div>
-    <div class="tr"><div class="tr-side l">Innovation &amp; Progress</div><div class="tr-vs">vs</div><div class="tr-side r">Protection of Sacred Knowledge</div></div>
-  </div>
-  <div class="tensions-foot"></div>
-</section>
-
-<!-- TRUST CONDITIONS -->
-<section class="trust-section" id="s-trust" data-label="Trust Conditions">
-  <div class="c">
-    <div class="eyebrow fi">From the Research · Community Voice</div>
-    <h2 class="fi section-title">Community Conditions<br><em style="font-style:italic">for Trust</em></h2>
-    <p class="fi section-intro">Six minimum requirements before communities can genuinely trust AI with their language and stories.</p>
-    <div class="trust-grid">
-      <div class="trust-card fi"><h4>Accuracy Must Be Near-Perfect</h4><p>Cultural and linguistic errors carry real harm — misrepresenting whakapapa or tikanga in ways that may not be immediately visible.</p></div>
-      <div class="trust-card fi"><h4>Māori Control</h4><p>Genuine decision-making authority — not advisory roles. Control over data, access, and the ability to shut the system down.</p></div>
-      <div class="trust-card fi"><h4>Transparency</h4><p>Communities need to understand how AI works with their data — in plain language. Opacity is incompatible with trust.</p></div>
-      <div class="trust-card fi"><h4>Safety from Harm</h4><p>Active prevention of misuse — deepfakes, fake Māori identities, and the weaponisation of cultural signals.</p></div>
-      <div class="trust-card fi"><h4>Intergenerational Protection</h4><p>Whatever is built must consider what future generations will inherit — not just present use.</p></div>
-      <div class="trust-card fi"><h4>Consent &amp; Regular Review</h4><p>Ongoing, contextual consent — not a one-time sign-off. Communities retain the right to withdraw at any point.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- RECOMMENDATIONS -->
 <section class="recs-section" id="s-recommendations" data-label="Recommendations">
   <div class="c">
@@ -884,55 +640,6 @@
           <div class="rec-item"><div class="rec-n">3</div><p><strong>Resource cultural expertise properly.</strong> Involving experts without fair compensation is extraction, even when well-intentioned.</p></div>
           <div class="rec-item"><div class="rec-n">4</div><p><strong>Be honest about the difference</strong> between using te reo and respecting it. Tokenistic use causes real harm.</p></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE YOU USE AI -->
-<section class="beforeai-section" id="s-before-ai" data-label="Before You Use AI">
-  <div class="c">
-    <div class="eyebrow fi">Practical Guidance · From the Research</div>
-    <h2 class="fi section-title">Before You Use AI</h2>
-    <p class="fi section-intro">For anyone using AI to engage with te reo Māori or Māori cultural knowledge — whether reconnecting with language, working in an organisation, or getting a translation.</p>
-
-    <div class="bai-grid fi" style="margin-top:3rem">
-      <div class="bai-card">
-        <span class="bai-q-label">Question 1</span>
-        <h4>Do you know what the tool is doing with your input?</h4>
-        <p>Your input may be stored and used to improve the model. Many AI tools were trained on Māori language content collected without community knowledge or consent.</p>
-        <p class="bai-ask"><strong>Ask:</strong> Does this tool have a clear data policy? Was it trained with Māori community consent?</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 2</span>
-        <h4>Is the output correct — or just confident?</h4>
-        <p>AI sounds certain even when it's wrong. For those reconnecting with their language, a mistranslation can fill gaps left by colonisation with something that feels right but isn't real.</p>
-        <p class="bai-ask"><strong>Ask:</strong> Have I validated this with a fluent speaker? Am I treating AI as a starting point or a final answer?</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 3</span>
-        <h4>Is what you're sharing noa, tapu, or rāhui?</h4>
-        <p>Not all Māori data is the same. <strong>Noa</strong> — publicly available. <strong>Tapu</strong> — sensitive, requires authority. <strong>Rāhui</strong> — sacred, must never be digitised or shared with AI systems.</p>
-        <p class="bai-ask">If you're unsure which category something falls into, that uncertainty is a signal to pause.</p>
-      </div>
-      <div class="bai-card">
-        <span class="bai-q-label">Question 4</span>
-        <h4>Are you using AI as a bridge — or letting it become the destination?</h4>
-        <p>AI can make te reo more accessible. But it cannot replace the warmth of a person, a marae, or a kaumātua. If it's helping you get there, it's working. If it's replacing those things, that's worth questioning.</p>
-        <div class="bai-quote-block">
-          <p>"The technology can help, but it will never replace that feeling of connection."</p>
-          <cite>— Smith, interview 2025</cite>
-        </div>
-      </div>
-    </div>
-
-    <div class="bai-card fi" style="margin-top:1.5rem">
-      <span class="bai-q-label">Question 5</span>
-      <h4>Are you informed enough to push back if something feels wrong?</h4>
-      <p style="font-size:.88rem;color:var(--ink2);line-height:1.78;max-width:72ch">You don't need to be a technologist — but you need enough understanding to notice when something doesn't feel right, and to make decisions about what you share.</p>
-      <div class="bai-quote-block">
-        <p>"We're at a crossroads. If we don't grasp it now, we will be recolonised — but in a way that no one can comprehend right now."</p>
-        <cite>— Karaitiana Taiuru, interview 2025</cite>
       </div>
     </div>
   </div>
